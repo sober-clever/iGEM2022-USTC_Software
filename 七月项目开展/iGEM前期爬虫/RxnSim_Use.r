@@ -1,0 +1,6 @@
+library(rcdk)
+library(rJava)
+library(fingerprint)
+library(data.table)
+library(RxnSim)
+ms.compute("CCO", "CO")
