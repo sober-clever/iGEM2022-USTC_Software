@@ -5,14 +5,6 @@ os.environ['R_USER'] = 'D:\\Applications\\Anaconda\\envs\\igem\\Lib\\site-packag
 from rpy2 import robjects
 from rpy2.robjects.packages import importr
 import time
-from rpyc import Service
-from rpyc.utils.server import ThreadedServer
-import rpyc
-
-
-class EnzService(Service):
-    def exposed_get_enz_dic(self, enz_list, user_reaction):
-        return CopeEnz(enz_list, user_reaction)
 
 
 def CopeEnz(enz_list, user_reaction):
@@ -53,9 +45,8 @@ def CopeEnz(enz_list, user_reaction):
     return final_enz_dic  # 这个字典可以直接用 json.dumps 转化成 JSON 字符串
 
 
-if __name__ == '__main__':
-    conf = rpyc.core.protocol.DEFAULT_CONFIG
-    conf['allow_pickle'] = True
-    s = ThreadedServer(service=EnzService, port=9998, auto_register=False, protocol_config=conf)
-
-    s.start()
+# if __name__ == '__main__':
+#
+#     rxnsim = importr('RxnSim')
+#     t = robjects.r['ms.compute']('CO', 'CCO')
+#     print(t[0])

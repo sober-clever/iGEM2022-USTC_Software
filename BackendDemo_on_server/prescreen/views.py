@@ -48,9 +48,14 @@ def query_list(request):
         return Response(serializer.data)
 
     elif request.method == "POST":
+        # return Response(request.data)
         t1 = time.time()
+        # dic = json.loads(request.data)
         serializer = QuerySerializer(data=request.data)
+        # serializer = QuerySerializer(data=dic)
+        # return Response(request.data)
         if serializer.is_valid():
+            # return Response(request.data)
             serializer.save()
             dic = request.data
             product = request.data['product']
@@ -68,7 +73,6 @@ def query_list(request):
                 PrescreenResult = []
                 # for i in SecondQueryset:
                 #     PrescreenResult.append([i.ec_num, i.reaction])
-                t3 = time.time()
 
                 sub = dic['reactant']['smiles']
                 # sub_atom_num = dic['reactant']['partflag']  # 参与反应的原子总数
@@ -113,7 +117,10 @@ def query_list(request):
                 # 生成物指定的原子中孤立的部分
 
                 cnt = 0
+                test_lis = []
                 for elm in SecondQueryset:
+                    if elm.reaction in test_lis:
+                        continue
                     substrate = Chem.MolFromSmiles(elm.substrate)
                     product = Chem.MolFromSmiles(elm.product)
                     if not substrate or not product:
@@ -134,18 +141,22 @@ def query_list(request):
                         continue
                     if sub_isolate_atom != [] and sub_matches2 == ():
                         continue
+                    test_lis.append(elm.reaction)
                     PrescreenResult.append([elm.ec_num, elm.reaction])
+
+                t2 = time.time()
 
                 user_reaction = dic['reactant']['smiles'] + '>>' + dic['product']['smiles']
                 # ret_val = CopeEnz(PrescreenResult, user_reaction)
                 conf = rpyc.core.protocol.DEFAULT_CONFIG
                 conf['allow_pickle'] = True
+                conf['sync_request_timeout'] = None
                 conn = rpyc.connect('124.220.19.232', port=9998, config=conf)
                 ret_val = conn.root.get_enz_dic(PrescreenResult, user_reaction)
                 # ret_json = json.dumps(ret_val)
                 # ret_val = {}
                 # ret_val['str'] = conn.root.get_time()
-                t4 = time.time()
+                t3 = time.time()
                 conn.close()
                 # ret_val = dict(ret_val)
                 # 通过该种方式可以提取 product
@@ -155,13 +166,13 @@ def query_list(request):
             # 从而可以将输入正确地转化成需要的数据
             # return Response(product['reactionAtoms']['0'][1], status=status.HTTP_200_OK)
                 dic_ = json.loads(ret_val)
-                t2 = time.time()
                 # dic_ = {}
                 # dic_['type'] = type(ret_val)
                 # dic_['string'] = ret_val
                 # dic_['content'] = ret_val
-                dic_['time1'] = t4 - t3
-                dic_['time2'] = t2 - t4
+                dic_['primary_selection_time'] = t2 - t1  # 初筛所需的时间
+                dic_['compare_time'] = t3 - t2  # 比对所需时间
+                dic_['compare_len'] = len(PrescreenResult)  # 比对的长度
             #     dic = {}
             #     dic['type'] = type(ret_val)
             #     dic['content'] = ret_val
@@ -173,7 +184,7 @@ def prescreen(request):
     if request.method == "GET":
         return render(request, 'prescreen.html')
     if request.method == "POST":
-        RequestDict = request.data
+        RequestDict = json.loads(request.data)
         MustQueryset = Mustcontain.objects.__all__()
         if RequestDict["Choice"]:  # if-else 懒得写
             ChoiceQueryset = Redox.objects.__all__()
@@ -189,3 +200,4 @@ def prescreen(request):
             for i in SecondQueryset:
                 PrescreenResult.append([i.ec_num, i.reaction])
             # Return PrescreenResult
+

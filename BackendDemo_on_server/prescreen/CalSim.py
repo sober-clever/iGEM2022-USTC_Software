@@ -84,8 +84,7 @@ def CopeEnz(enz_list, user_reaction):
 
 
 # if __name__ == '__main__':
-    # conf = rpyc.core.protocol.DEFAULT_CONFIG
-    # conf['allow_pickle'] = True
-    # s = ThreadedServer(service=EnzService, port=9998, auto_register=False, protocol_config = conf)
-
-    # s.start()
+#
+#     rxnsim = importr('RxnSim')
+#     t = robjects.r['ms.compute']('CO', 'CCO')
+#     print(t[0])
