@@ -206,7 +206,7 @@ class Query(models.Model):
 
 
 class Enzyme(models.Model):
-    ec_num = models.CharField(max_length=20, blank=True, null=True)
+    ec_num = models.CharField(max_length=20, blank=True, primary_key=True)
 
     ec_name = models.CharField(max_length=255, blank=True, null=True)
 
