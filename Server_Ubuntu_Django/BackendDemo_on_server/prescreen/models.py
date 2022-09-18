@@ -214,3 +214,15 @@ class Enzyme(models.Model):
         managed = False
         db_table = 'enzyme'
 
+
+class Reaction(models.Model):
+    ec_num = models.CharField(max_length=20, blank=True)
+    reaction = models.CharField(max_length=255)
+    substrate = models.CharField(max_length=255, blank=True, null=True)
+    product = models.CharField(max_length=255, blank=True, null=True)
+    cofactor = models.CharField(max_length=255, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'reaction'
+        # unique_together = (('ec_num', 'reaction'),)

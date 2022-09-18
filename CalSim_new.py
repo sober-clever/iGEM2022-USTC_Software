@@ -127,22 +127,7 @@ class EnzService(Service):
             dic_ = {}
             dic_ = enz_dic[ec]
             ecs.append(ec)
-            dic_['link'] = []
-            dic_['link'].append('https://www.brenda-enzymes.org/enzyme.php?ecno=' + ec)
-            dic_['link'].append('https://www.uniprot.org/uniprotkb?query=ec%3A' + ec)
-            dic_['link'].append('https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22type%22%\
-                                3A%22group%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22group%22%2C%22nodes\
-                                %22%3A%5B%7B%22type%22%3A%22group%22%2C%22nodes%22%3A%5B%7B%22type%22%3A\
-                                %22terminal%22%2C%22service%22%3A%22full_text%22%2C%22parameters%22%3A%7B%22\
-                                value%22%3A%22ec%3A' + ec + '%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22\
-                                %7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%7D\
-                                %5D%2C%22logical_operator%22%3A%22and%22%7D%2C%22return_type%22%3A%22entry%22%2C\
-                                %22request_options%22%3A%7B%22paginate%22%3A%7B%22start%22%3A0%2C%22rows\
-                                %22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort\
-                                %22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%2C%22\
-                                scoring_strategy%22%3A%22combined%22%7D%2C%22request_info%22%3A%7B%22query_id%22%3A\
-                                %22b5d9444b2ee38f138a33593d9e94a0b7%22%7D%7D')
-            dic_['link'].append('https://pubmed.ncbi.nlm.nih.gov/?term=ec%3A1.1.1.1')
+            dic_['link'] = 'https://www.brenda-enzymes.org/enzyme.php?ecno=' + ec
             final_enz_dic[ec] = dic_
             # final_enz_dic[ec] = enz_dic[ec]
         t2 = time.time()
@@ -168,6 +153,7 @@ if __name__ == '__main__':
     # dic = CopeEnz([('1.1.1.1', 'CO>>CCO')],'CCO>>CO')
     # print(dic)
     # print(t[0])
+
 
 
 

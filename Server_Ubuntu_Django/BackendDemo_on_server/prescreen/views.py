@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
 from .models import Query, Redox, Reactions, Mustcontain, Elimination, Decarboxylation, \
-    Hydrolysis, Transfer, Others, Enzyme
+    Hydrolysis, Transfer, Others, Enzyme, Reaction
 from .serializers import QuerySerializer
 from rdkit import Chem
 # from .CalSim_Ori import CopeEnz
@@ -75,7 +75,7 @@ def query_list(request):
                 else:
                     ChoiceQueryset = Others.objects.all()
 
-                FirstQueryset = ChoiceQueryset  # MustQueryset.union(MustQueryset, ChoiceQueryset)
+                FirstQueryset = MustQueryset.union(MustQueryset, ChoiceQueryset)
                 FirstList = []
                 for i in FirstQueryset:
                     FirstList.append(i.ec_num)
@@ -183,10 +183,16 @@ def query_list(request):
                 # dic_['type'] = type(ret_val)
                 # dic_['string'] = ret_val
                 # dic_['content'] = ret_val
-                
+
                 EnzymeQuerySet = Enzyme.objects.filter(ec_num__in=dic_['ecs'])
                 for enzyme in EnzymeQuerySet:
                     dic_[enzyme.ec_num]['name'] = enzyme.ec_name
+
+                for elm in dic_['ecs']:
+                    ReactionQuerySet = Reaction.objects.filter(ec_num=elm).filter(reaction=dic_[elm]\
+                        ['most_similar_reaction'])
+                    dic_[elm]['cofactor'] = ReactionQuerySet[0].cofactor
+
                 dic_['primary_selection_time'] = t2 - t1  # 初筛所需的时间
                 dic_['compare_time'] = t3 - t2  # 比对所需时间
                 dic_['compare_len'] = len(PrescreenResult)  # 比对的长度
