@@ -203,3 +203,14 @@ class Query(models.Model):
 
     # 用于记录这个查询什么时候被创建
     created = models.DateTimeField(auto_now=True)
+
+
+class Enzyme(models.Model):
+    ec_num = models.CharField(max_length=20, blank=True, primary_key=True)
+
+    ec_name = models.CharField(max_length=255, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'enzyme'
+
