@@ -1,0 +1,340 @@
+redox reaction: 941
+oxidation: 1003
+reduction: 987
+intramolecular phosphate transfer: 1
+dehydrogenation: 20
+dehydration: 10
+oxidative decarboxylation: 33
+decarboxylation: 120
+reductive carboxylation: 5
+rearrangement: 1
+oxidative acylation: 1
+reductive deacylation: 1
+transhydrogenation: 1
+oxidative cyclization: 5
+sulfoxidation: 5
+oxidative dehalogenation: 1
+peroxidation: 2
+hydroxylation: 48
+iodination: 1
+oxygenation: 5
+halogenation: 4
+peroxygenation: 1
+epoxidation: 5
+monooxygenation: 2
+dioxygenation: 6
+side-chain migration: 1
+ring cleavage: 1
+C-C-bond cleavage: 7
+C-P bond cleavage: 2
+O-O heterolytic cleavage: 1
+extradiol cleavage: 1
+Deamination: 28
+oxidative deamination: 25
+hydrolysis: 1112
+C-H bond cleavage: 2
+demethylation: 8
+oxidative demethylation: 6
+dehalogenation: 8
+N-oxidation: 2
+Bayer-Villiger reaction: 5
+oxygen ring insertion reaction: 1
+cyclization: 37
+O-dealkylation: 2
+desulfation: 1
+reduction of azo, nitro, N-oxide groups: 1
+N-dealkylation: 1
+S-dealkylation: 1
+deacylation: 5
+C-C bond cleavage: 4
+elimination: 147
+desulfonation: 1
+omega-oxidation: 1
+C-N bond cleavage: 5
+O-demethylation: 1
+S-demethylation: 1
+N-demethylation: 1
+dealkylation: 1
+decyanation: 1
+methyl group transfer: 124
+Phosphorylation: 27
+cannizzaro reaction: 1
+dismutation: 4
+cross-dismutation: 1
+reductive deamination: 2
+deiodination: 1
+dechlorination: 2
+carboxylation: 19
+reductive amination: 5
+amination: 19
+transamidation: 4
+reductive amination redox reaction: 1
+transamination: 8
+condensation: 64
+reductive condensation: 2
+co-denitrification: 1
+denitrificaton: 1
+More: 29
+coenzyme A transfer: 16
+transhydroxylation: 1
+transfer of methyl group: 8
+S-methylation: 2
+reductive methylation: 3
+alkyl group transfer: 2
+methylation: 3
+methoxycarbonylation: 2
+O-methylation: 2
+methylene group transfer: 1
+para-O-methylation: 1
+N-methylation: 1
+hydroxymethyl group transfer: 4
+formyl group transfer: 3
+formimino group transfer: 2
+carboxyl group transfer: 1
+carbamoyl group transfer: 5
+transfer of carbamoyl phosphate: 2
+amidine group transfer: 2
+transamidination: 1
+molybdate transfer: 1
+keto group transfer: 2
+aldehyde group transfer: 3
+C-C bond formation: 3
+Acyl group transfer: 162
+sinapoyl group transfer: 1
+intramolecular cyclization: 1
+Claisen condensation: 12
+glycosyl group transfer: 21
+Acylation: 6
+transfer of acyl group: 2
+malonylation: 1
+aldol condensation: 13
+enolization: 4
+acetylation: 6
+C-6/C-1 Claisen-type cyclization: 1
+transfer of acetyl group: 1
+transesterification: 7
+esterification: 32
+thioester hydrolysis: 1
+thiolytic cleavage: 1
+addition: 25
+amide bond formation: 2
+aminoacyl group transfer: 14
+peptidyl group transfer: 1
+gamma-glutamylcysteinyl transfer: 1
+transthioesterification: 2
+arginylation: 1
+transacetylation: 3
+C-S bond cleavage: 3
+transfer of phosphate: 2
+phosphate transfer: 1
+hexosyl group transfer: 188
+transfructosylation: 1
+transfer of glycosyl group: 8
+transglycosylation: 18
+transfer of hexosyl group: 1
+phospho group transfer: 206
+hexosyl group transferase: 1
+transfer of alpha-N-acetylglucosamine: 2
+glucuronyl group transfer: 1
+galactosyl group transfer: 1
+glucosyl group transfer: 1
+fructosyl group transfer: 2
+pentosyl group transfer: 36
+amino group transfer: 71
+transfer of 3-dephospho-CoA: 1
+substituted phospho group transfer: 24
+alkenyl group transfer: 17
+Friedel-Crafts alkylation: 3
+aryl group transfer: 2
+aminopropyl group transfer: 3
+adenosyl group transfer: 4
+enolpyruvate group transfer: 1
+pyrimidyl group transfer: 1
+aminocarboxypropyl group transfer: 2
+ether formation: 1
+hydroxymethylpyrimidine group transfer: 1
+3-amino-3-carboxypropyl group transfer: 1
+nucleophilic substitution: 3
+aminobutyl group transfer: 3
+C-O bond cleavage: 4
+gamma-replacement: 2
+sulfate group removal: 1
+aminopropanoyl-group transfer: 3
+condensing reaction: 1
+polyprenyl-group transfer: 1
+sulfhydrylation: 1
+C-N bond formation: 6
+cyclopropanation: 1
+carboxyvinyl group transfer: 1
+SN2 substitution: 1
+substitution: 1
+oximino group transfer: 1
+nitrogenous group transfer: 1
+phospho-group transfer: 16
+isomerization: 85
+phopho group transfer: 4
+diphosphate transfer: 5
+nucleotidyl group transfer: 56
+polymerization: 2
+adenylylation: 2
+deadenylylation: 1
+uridylylation: 1
+adenylyl group transfer: 1
+transfer of phosphoribosyl-dephospho-CoA: 1
+P-O bond cleavage: 14
+adenylation: 2
+nucleosidyl group transfer: 1
+transphosphatidylation: 2
+sulfur atom transfer: 7
+sulfur transfer: 1
+sulfate group transfer: 29
+transfer of CoA: 1
+sulfo ethyl group transfer: 1
+Selenium transfer: 1
+carboxylic ester hydrolysis: 6
+Knoevenagel condensation: 1
+ester hydrolysis: 5
+DNA-dependent ATPase activity: 1
+deadenylation: 1
+phosphoric ester hydrolysis: 6
+endonucleolytic cleavage of supercoiled plasma DNA to linear DNA: 1
+phosphorous acid anhydride hydrolysis: 25
+P-C bond cleavage: 1
+desulfination: 1
+O-glycosyl bond hydrolysis: 4
+hyrolysis of O-glycosyl bonds: 1
+hyrolysis of O-glycosyl bond: 3
+synthesis of thioether: 1
+thioether hydrolysis: 1
+ether hydrolysis: 2
+carboxylic acid amide hydrolysis: 22
+Aminoacylation: 22
+polymerization of dipeptide amides: 1
+dipeptidyl ligase activity: 1
+transpeptidation: 2
+Henry: 1
+cleavage of C-N-linkage: 15
+formation of peptide bond: 3
+ester bond hydrolysis: 1
+aminolysis: 1
+acyl transfer: 2
+transfer of amide group: 1
+N-deacetylation: 1
+deacetylation: 2
+formylation: 3
+deformylation: 1
+formation of cyclic amides: 2
+amidine hydrolysis: 19
+internal C-N condensation: 1
+hydrolytic deamination: 1
+nitrile hydrolysis: 1
+group transfer: 26
+intramolecular oxidoreduction: 38
+retro-Friedel-Crafts acylation: 2
+C-halide hydrolysis: 4
+carboligation: 4
+addition of H2O: 2
+gamma-carboxylation: 1
+cyanohydrin formation: 3
+Henry reaction: 2
+transcyanation: 1
+aldol addition: 4
+retro aldol-condensation: 1
+reversal of an aldol condensation: 6
+Cleavage of a C-O bond: 1
+cleavage of 3-hydroxy acid: 2
+beta-elimination: 9
+replacement: 2
+racemization: 21
+alpha,beta-elimination: 3
+hydration: 5
+carbon-nitrogen lyase reaction: 1
+elimination of CO2: 1
+Morgan Elson reaction: 1
+beta-replacement: 3
+double-bond hydration: 1
+C-O bond cleavage by elimination of water: 16
+C-O bond formation: 1
+C-S bond formation: 1
+Knorr reaction: 1
+intramolecular oxido-reduction: 1
+elimination of H2O: 3
+syn-elimination: 1
+elimination of an alcohol from a polysaccharide: 2
+C-O-bond cleavage: 1
+D-fructosyl-D-fructofuranosyl group transfer: 1
+elimination of sulfate: 1
+intramolecular redox reaction: 1
+triphosphate elimination: 1
+cleavage of triphosphate bond: 1
+elimination, C-O bond cleavage: 1
+diphosphate lysis: 1
+internal cyclization: 2
+elimination of diphosphate: 2
+1,4-trans elimination: 1
+lyase rather than hydrolase reaction: 1
+endonuclease reaction: 1
+exonuclease reaction: 1
+Double-bond formation: 1
+elimination of NH3: 4
+amidation: 1
+amidine-lyase reaction: 1
+cleavage of C-O-linkage: 1
+Pictete-Spengler reaction: 1
+dopamine-secologanine condensation: 1
+alpha,gamma-elimination: 1
+C-S-bond cleavage: 1
+elimination of H2S or RSH: 1
+elimination of H2Se: 1
+cleavage of C-Se bond: 1
+elimination of SO2: 1
+oxidative elimination of NH3: 1
+elimination of chloride: 1
+covalent attachment of heme: 1
+carbon-halide lyase reaction: 3
+formation of diphosphate: 1
+endoribonuclease reaction: 2
+transphosphorylation: 1
+racemization of amino acids: 1
+epimerization: 28
+cis-trans-isomerization: 6
+cis-trans isomerization: 2
+rotation: 1
+Amadori rearrangement: 1
+aldose-ketose-isomerization: 1
+tautomerization: 1
+intramolecular oxidation: 1
+Michael addition: 1
+intramolecular transfer reaction: 2
+intramolecular transglucosylation: 1
+glycosyl bond isomerization: 1
+elimination/addition: 9
+1,2-elimination: 1
+4,5-elimination: 1
+intramolecular lyase reaction: 2
+intramolecular lyase: 2
+transmembrane transport: 43
+Acid-thiol ligation: 26
+aminacylation: 1
+forming of carbon sulfur bonds: 4
+thioester formation: 2
+formation of thioester: 2
+thiolation: 1
+Acid amide hydrolysis: 8
+Ligation: 4
+Acid amide formation: 4
+peptide synthase reaction: 4
+Diels-Alder cycloaddition: 1
+amide group transfer: 3
+carboxylic acid amide formation: 18
+carboxamide formation: 17
+peptide bond ligation: 1
+carboxylic acid amid formation: 1
+peptide bond formation: 1
+carboxylic acid-amide formation: 1
+heteroatomic ring closure: 2
+carboxylic acid formation: 1
+hydroloysis of phosphoric ester: 2
+ATP hydrolysis: 1
+hydolysis of phosphoric ester: 1
+transmembrane export: 1
