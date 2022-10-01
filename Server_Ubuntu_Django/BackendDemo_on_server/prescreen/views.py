@@ -61,6 +61,7 @@ def query_list(request):
             dic = request.data
             product = request.data['product']
             MustQueryset = Mustcontain.objects.all()
+            FirstQueryset = MustQueryset
             if dic["type"]:  # if-else 懒得写
                 if dic["type"] == 1:
                     ChoiceQueryset = Redox.objects.all()
@@ -74,8 +75,13 @@ def query_list(request):
                     ChoiceQueryset = Hydrolysis.objects.all()
                 else:
                     ChoiceQueryset = Others.objects.all()
+                FirstQueryset = FirstQueryset.union(Redox.objects.all())
+                FirstQueryset = FirstQueryset.union(Elimination.objects.all())
+                FirstQueryset = FirstQueryset.union(Decarboxylation.objects.all())
+                FirstQueryset = FirstQueryset.union(Transfer.objects.all())
+                FirstQueryset = FirstQueryset.union(Hydrolysis.objects.all())
+                FirstQueryset = FirstQueryset.union(Others.objects.all())
 
-                FirstQueryset = MustQueryset.union(MustQueryset, ChoiceQueryset)
                 FirstList = []
                 for i in FirstQueryset:
                     FirstList.append(i.ec_num)
@@ -188,10 +194,10 @@ def query_list(request):
                 for enzyme in EnzymeQuerySet:
                     dic_[enzyme.ec_num]['name'] = enzyme.ec_name
 
-                for elm in dic_['ecs']:
-                    ReactionQuerySet = Reaction.objects.filter(ec_num=elm).filter(reaction=dic_[elm]\
-                        ['most_similar_reaction'])
-                    dic_[elm]['cofactor'] = ReactionQuerySet[0].cofactor
+                # for elm in dic_['ecs']:
+                #     ReactionQuerySet = Reaction.objects.filter(ec_num=elm).filter(reaction=dic_[elm]\
+                #         ['most_similar_reaction'])
+                #     dic_[elm]['cofactor'] = ReactionQuerySet[0].cofactor
 
                 dic_['primary_selection_time'] = t2 - t1  # 初筛所需的时间
                 dic_['compare_time'] = t3 - t2  # 比对所需时间
