@@ -77,12 +77,12 @@ class AuthUserUserPermissions(models.Model):
         unique_together = (('user', 'permission'),)
 
 
-class Decarboxylation(models.Model):
-    ec_num = models.CharField(max_length=20, blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'decarboxylation'
+# class Decarboxylation(models.Model):
+#     ec_num = models.CharField(max_length=20, blank=True, null=True)
+#
+#     class Meta:
+#         managed = False
+#         db_table = 'decarboxylation'
 
 
 class DjangoAdminLog(models.Model):
@@ -145,6 +145,19 @@ class Hydrolysis(models.Model):
         managed = False
         db_table = 'hydrolysis'
 
+class Ismerization(models.Model):
+    ec_num = models.CharField(max_length=20, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ismerization'
+
+class Ligation(models.Model):
+    ec_num = models.CharField(max_length=20, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ligation'
 
 class Mustcontain(models.Model):
     ec_num = models.CharField(max_length=20, blank=True, null=True)
@@ -154,12 +167,12 @@ class Mustcontain(models.Model):
         db_table = 'mustcontain'
 
 
-class Others(models.Model):
-    ec_num = models.CharField(max_length=20, blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'others'
+# class Others(models.Model):
+#     ec_num = models.CharField(max_length=20, blank=True, null=True)
+#
+#     class Meta:
+#         managed = False
+#         db_table = 'others'
 
 
 class Reactions(models.Model):

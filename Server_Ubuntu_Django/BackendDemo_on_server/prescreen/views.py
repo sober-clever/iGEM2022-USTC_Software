@@ -2,8 +2,8 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
-from .models import Query, Redox, Reactions, Mustcontain, Elimination, Decarboxylation, \
-    Hydrolysis, Transfer, Others, Enzyme, Reaction
+from .models import Query, Redox, Reactions, Mustcontain, Elimination, Ismerization, \
+    Hydrolysis, Transfer, Ligation, Enzyme, Reaction
 from .serializers import QuerySerializer
 from rdkit import Chem
 # from .CalSim_Ori import CopeEnz
@@ -66,21 +66,21 @@ def query_list(request):
                 if dic["type"] == 1:
                     ChoiceQueryset = Redox.objects.all()
                 elif dic["type"] == 2:
-                    ChoiceQueryset = Elimination.objects.all()
-                elif dic["type"] == 3:
-                    ChoiceQueryset = Decarboxylation.objects.all()
-                elif dic["type"] == 4:
                     ChoiceQueryset = Transfer.objects.all()
-                elif dic["type"] == 5:
+                elif dic["type"] == 3:
                     ChoiceQueryset = Hydrolysis.objects.all()
+                elif dic["type"] == 4:
+                    ChoiceQueryset = Elimination.objects.all()
+                elif dic["type"] == 5:
+                    ChoiceQueryset = Ismerization.objects.all()
                 else:
-                    ChoiceQueryset = Others.objects.all()
-                FirstQueryset = FirstQueryset.union(Redox.objects.all())
-                FirstQueryset = FirstQueryset.union(Elimination.objects.all())
-                FirstQueryset = FirstQueryset.union(Decarboxylation.objects.all())
-                FirstQueryset = FirstQueryset.union(Transfer.objects.all())
-                FirstQueryset = FirstQueryset.union(Hydrolysis.objects.all())
-                FirstQueryset = FirstQueryset.union(Others.objects.all())
+                    ChoiceQueryset = Ligation.objects.all()
+                FirstQueryset = FirstQueryset.union(ChoiceQueryset)
+                # FirstQueryset = FirstQueryset.union(Elimination.objects.all())
+                # FirstQueryset = FirstQueryset.union(Decarboxylation.objects.all())
+                # FirstQueryset = FirstQueryset.union(Transfer.objects.all())
+                # FirstQueryset = FirstQueryset.union(Hydrolysis.objects.all())
+                # FirstQueryset = FirstQueryset.union(Others.objects.all())
 
                 FirstList = []
                 for i in FirstQueryset:
