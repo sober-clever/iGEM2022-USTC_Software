@@ -1,0 +1,46 @@
+4 C-C-bond cleavage
+6 C-C-bond cleavage
+4 C-P bond cleavage
+6 C-P bond cleavage
+7 More
+3 deadenylation
+4 deadenylation
+3 P-C bond cleavage
+4 P-C bond cleavage
+4 synthesis of thioether
+6 synthesis of thioether
+3 cleavage of C-N-linkage
+4 cleavage of C-N-linkage
+4 internal C-N condensation
+6 internal C-N condensation
+7 carboligation
+7 cyanohydrin formation
+7 Cleavage of a C-O bond
+3 cleavage of 3-hydroxy acid
+4 cleavage of 3-hydroxy acid
+7 replacement
+7 Morgan Elson reaction
+7 C-O bond formation
+7 C-S bond formation
+7 elimination of an alcohol from a polysaccharide
+7 C-O-bond cleavage
+7 D-fructosyl-D-fructofuranosyl group transfer
+7 elimination of sulfate
+7 triphosphate elimination
+7 cleavage of C-O-linkage
+7 dopamine-secologanine condensation
+7 C-S-bond cleavage
+7 cleavage of C-Se bond
+1 oxidative elimination of NH3
+4 oxidative elimination of NH3
+7 covalent attachment of heme
+7 formation of diphosphate
+7 intramolecular lyase reaction
+7 intramolecular lyase
+7 Acid-thiol ligation
+7 forming of carbon sulfur bonds
+7 thioester formation
+7 formation of thioester
+7 heteroatomic ring closure
+7 carboxylic acid formation
+7 transmembrane export
