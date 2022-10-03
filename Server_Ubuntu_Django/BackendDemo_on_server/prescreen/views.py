@@ -136,7 +136,7 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                                     pro_lis[str(i)][1] not in have_neighbor]
                 # 生成物指定的子结构中孤立的部分
 
-                required_cofactor = dic["cofactor"]
+                required_cofactor = dic["cofactors"]
 
                 cnt = 0
                 # test_lis = []
