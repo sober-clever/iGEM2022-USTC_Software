@@ -42,7 +42,7 @@ def article_list(request):
 
 
 @api_view(['GET', 'POST'])
-def query_list(request):
+def query_list(request):    # 用于根据给出的反应查询酶的信息
     if request.method == "GET":
         queries = Query.objects.all()
         serializer = QuerySerializer(queries, many=True)

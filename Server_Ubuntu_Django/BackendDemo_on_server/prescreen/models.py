@@ -145,6 +145,7 @@ class Hydrolysis(models.Model):
         managed = False
         db_table = 'hydrolysis'
 
+
 class Ismerization(models.Model):
     ec_num = models.CharField(max_length=20, blank=True, null=True)
 
@@ -152,12 +153,14 @@ class Ismerization(models.Model):
         managed = False
         db_table = 'ismerization'
 
+
 class Ligation(models.Model):
     ec_num = models.CharField(max_length=20, blank=True, null=True)
 
     class Meta:
         managed = False
         db_table = 'ligation'
+
 
 class Mustcontain(models.Model):
     ec_num = models.CharField(max_length=20, blank=True, null=True)
@@ -228,7 +231,7 @@ class Enzyme(models.Model):
         db_table = 'enzyme'
 
 
-class Reaction(models.Model):
+class Reaction(models.Model):   # Reaction 数据表的补充，添加了辅因子的信息
     ec_num = models.CharField(max_length=20, blank=True)
     reaction = models.CharField(max_length=255)
     substrate = models.CharField(max_length=255, blank=True, null=True)
@@ -239,3 +242,37 @@ class Reaction(models.Model):
         managed = False
         db_table = 'reaction'
         # unique_together = (('ec_num', 'reaction'),)
+
+
+class Km(models.Model):
+    ec_num = models.CharField(max_length=20)
+    speciesname = models.CharField(max_length=200)  # 种属
+    temp = models.FloatField()
+    ph = models.FloatField()
+    km = models.FloatField()
+
+    class Meta:
+        managed = False
+        db_table = 'km'
+
+
+class Kcat_Km(models.Model):
+    ec_num = models.CharField(max_length=20)
+    substrate = models.CharField(max_length=200)    # 底物信息
+    speciesname = models.CharField(max_length=200)  # 种属
+    temp = models.FloatField()
+    ph = models.FloatField()
+    kcat_km = models.FloatField()
+
+    class Meta:
+        managed = False
+        db_table = 'kcat_km'
+
+
+class Organism(models.Model):   # 未设主键，需要在数据表 Organism 内添加自增 id
+    ec_num = models.CharField(max_length=20, blank=True)
+    organism = models.CharField(max_length=200)
+
+    class Meta:
+        managed = False
+        db_table = 'Organism'
