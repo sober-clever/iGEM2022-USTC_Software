@@ -275,4 +275,4 @@ class Organism(models.Model):   # 未设主键，需要在数据表 Organism 内
 
     class Meta:
         managed = False
-        db_table = 'Organism'
+        db_table = 'organism'
