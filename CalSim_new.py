@@ -26,6 +26,7 @@ class Worker(object):
         for elm_ in lis[start:end+1] :
             ec_num = elm_[0]
             reaction = elm_[1]
+            cofactor = elm_[2]
             if 'exception' in reaction:
                 continue
             try:
@@ -40,11 +41,13 @@ class Worker(object):
                 if ec_num not in enz_dic:
                     dic['similarity'] = sim[0]
                     dic['most_similar_reaction'] = reaction
+                    dic['cofactor'] = cofactor
                     enz_dic[ec_num] = dic
                 else:
                     if enz_dic[ec_num]['similarity'] < sim[0]:
                         enz_dic[ec_num]['similarity'] = sim[0]
                         enz_dic[ec_num]['most_similar_reaction'] = reaction
+                        enz_dic[ec_num]['cofactor'] = cofactor
                 t2 = time.time()
                 total_time += (t2-t1)
             except:
@@ -64,7 +67,7 @@ class EnzService(Service):
         # rxnsim = importr('RxnSim')
         enz_lis_len = len(enz_list)
         # enz_lis_len = 4
-        n = 4
+        n = 8
         seg = int(enz_lis_len / n)
         futures = []
         # t0 = time.time()
@@ -83,18 +86,20 @@ class EnzService(Service):
         enz_dic = {}  # 该字典以酶的 ec 编码为键，以和酶有关的信息（类型为字典）为值
         # t0 = time.time()
         for i in range(n):
-            for ec_num in results[i]:
+            for ec_num in results[i]:   # 遍历所有线程的运算结果
                 if ec_num == 'rxnsim_time':
                     continue
                 if ec_num not in enz_dic:
                     dic = {}
                     dic['similarity'] = results[i][ec_num]['similarity']
                     dic['most_similar_reaction'] = results[i][ec_num]['most_similar_reaction']
+                    dic['cofactor'] = results[i][ec_num]['cofactor']
                     enz_dic[ec_num] = dic
                 else:
                     if enz_dic[ec_num]['similarity'] < results[i][ec_num]['similarity']:
                         enz_dic[ec_num]['similarity'] = results[i][ec_num]['similarity']
                         enz_dic[ec_num]['most_similar_reaction'] = results[i][ec_num]['most_similar_reaction']
+                        enz_dic[ec_num]['cofactor'] = results[i][ec_num]['cofactor']
         # t00 = time.time()
         # for enz_lis in enz_list:
         #     ec_num = enz_lis[0]
@@ -123,7 +128,7 @@ class EnzService(Service):
         # t4 = time.time()
         final_enz_dic = {}
         ecs = []
-        for ec in lis[:30]:  # 取前 30 种酶
+        for ec in lis[:5]:  # 取前 5 种酶
             dic_ = {}
             dic_ = enz_dic[ec]
             ecs.append(ec)

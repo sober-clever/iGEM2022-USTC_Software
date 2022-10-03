@@ -166,7 +166,7 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                     if sub_isolate_atom != [] and sub_matches2 == ():
                         continue
                     # test_lis.append(elm.reaction)
-                    PrescreenResult.append([elm.ec_num, elm.reaction])
+                    PrescreenResult.append([elm.ec_num, elm.reaction, elm.cofactor])
 
                 t2 = time.time()
 
