@@ -59,7 +59,7 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
             # return Response(request.data)
             serializer.save()
             dic = request.data
-            product = request.data['product']
+            # product = request.data['product']
             MustQueryset = Mustcontain.objects.all()
             FirstQueryset = MustQueryset
             if dic["type"]:  # if-else 懒得写
@@ -98,7 +98,7 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                 sub_lis = dic['reactant']['reactionAtoms']  # 参与反应的原子列表
                 sub_len = len(sub_lis)
 
-                sub_mol = Chem.MolFromSmiles(sub)
+                sub_mol = Chem.MolFromSmiles(sub)   # mol 格式的反应物
                 sub_bonds = []
                 sub_atom_path = [sub_lis[str(i)][1] for i in range(sub_len)]
                 have_neighbor = []
@@ -130,16 +130,21 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                         have_neighbor.append(j)
                         pro_bonds.append(b.GetIdx())
                 pro_substruct = Chem.PathToSubmol(pro_mol, pro_bonds)
-                # 生成物指定的基团
+                # 生成物指定的子结构中连在一起的部分
+
                 pro_isolate_atom = [pro_lis[str(i)][0] for i in range(pro_len) if
                                     pro_lis[str(i)][1] not in have_neighbor]
-                # 生成物指定的原子中孤立的部分
+                # 生成物指定的子结构中孤立的部分
+
+                required_cofactor = dic["cofactor"]
 
                 cnt = 0
                 # test_lis = []
                 for elm in SecondQueryset:
                     # if elm.reaction in test_lis:
                     #     continue
+                    if elm.cofactor not in required_cofactor:
+                        continue
                     substrate = Chem.MolFromSmiles(elm.substrate)
                     product = Chem.MolFromSmiles(elm.product)
                     if not substrate or not product:
