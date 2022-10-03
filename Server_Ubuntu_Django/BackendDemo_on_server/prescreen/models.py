@@ -276,3 +276,14 @@ class Organism(models.Model):   # 未设主键，需要在数据表 Organism 内
     class Meta:
         managed = False
         db_table = 'organism'
+
+
+class Kinetic(models.Model):
+    ec_num = models.CharField(max_length=20)
+    speciesname = models.CharField(max_length=200)
+    ph = models.CharField(max_length=100)
+    temp = models.CharField(max_length=100)
+
+    class Meta:
+        managed = False
+        db_table = 'kinetic'

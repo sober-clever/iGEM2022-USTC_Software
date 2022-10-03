@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
 from .models import Query, Redox, Mustcontain, Elimination, Ismerization, \
-    Hydrolysis, Transfer, Ligation, Enzyme, Reaction
+    Hydrolysis, Transfer, Ligation, Enzyme, Reaction, Organism, Kinetic
 from .serializers import QuerySerializer
 from rdkit import Chem
 # from .CalSim_Ori import CopeEnz
@@ -139,11 +139,18 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                 required_cofactor = dic["cofactors"]
 
                 cnt = 0
+                req_orga = dic["classtype"]  # abbr. for required_organism 获得种属信息（用户未填则为空）
+                OrganismQueryset = Organism.objects.filter(organism=req_orga)
+                req_orga_ecs = []
+                for elm in OrganismQueryset:
+                    req_orga_ecs.append(elm.ec_num)
                 # test_lis = []
                 for elm in SecondQueryset:
                     # if elm.reaction in test_lis:
                     #     continue
-                    if elm.cofactor not in required_cofactor:
+                    if required_cofactor != [] and elm.cofactor not in required_cofactor:
+                        continue
+                    if req_orga != "" and elm.ec_num not in req_orga_ecs:   # 酶对应的种属需要满足用户要求的种属
                         continue
                     substrate = Chem.MolFromSmiles(elm.substrate)
                     product = Chem.MolFromSmiles(elm.product)
@@ -196,8 +203,14 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                 # dic_['content'] = ret_val
 
                 EnzymeQuerySet = Enzyme.objects.filter(ec_num__in=dic_['ecs'])
+
                 for enzyme in EnzymeQuerySet:
                     dic_[enzyme.ec_num]['name'] = enzyme.ec_name
+                    if req_orga != "":  # 有要求的种属
+                        KinQueryset = Kinetic.objects.filter(speciesname=req_orga).filter(ec_num=enzyme.ec_num)
+                        for elm in KinQueryset:
+                            dic_[enzyme.ec_num]['temp'] = elm.temp
+                            dic_[enzyme.ec_num]['ph'] = elm.ph
 
                 # for elm in dic_['ecs']:
                 #     ReactionQuerySet = Reaction.objects.filter(ec_num=elm).filter(reaction=dic_[elm]\
