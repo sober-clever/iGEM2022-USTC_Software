@@ -178,16 +178,16 @@ class Mustcontain(models.Model):
 #         db_table = 'others'
 
 
-class Reactions(models.Model):
-    ec_num = models.CharField(primary_key=True, max_length=20)
-    reaction = models.CharField(max_length=255)
-    substrate = models.CharField(max_length=255, blank=True, null=True)
-    product = models.CharField(max_length=255, blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'reactions'
-        unique_together = (('ec_num', 'reaction'),)
+# class Reactions(models.Model):
+#     ec_num = models.CharField(primary_key=True, max_length=20)
+#     reaction = models.CharField(max_length=255)
+#     substrate = models.CharField(max_length=255, blank=True, null=True)
+#     product = models.CharField(max_length=255, blank=True, null=True)
+#
+#     class Meta:
+#         managed = False
+#         db_table = 'reactions'
+#         unique_together = (('ec_num', 'reaction'),)
 
 
 class Redox(models.Model):

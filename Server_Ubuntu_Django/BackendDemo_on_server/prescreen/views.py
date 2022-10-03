@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
-from .models import Query, Redox, Reactions, Mustcontain, Elimination, Ismerization, \
+from .models import Query, Redox, Mustcontain, Elimination, Ismerization, \
     Hydrolysis, Transfer, Ligation, Enzyme, Reaction
 from .serializers import QuerySerializer
 from rdkit import Chem
@@ -85,7 +85,7 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                 FirstList = []
                 for i in FirstQueryset:
                     FirstList.append(i.ec_num)
-                SecondQueryset = Reactions.objects \
+                SecondQueryset = Reaction.objects \
                     .filter(ec_num__in=FirstList) \
                     # .filter(substrate__contains=dic["reactant"]["reactionAtoms"][0]) \
                 # .filter(product__contains=dic["product"]["reactionAtoms"][0])
@@ -221,7 +221,7 @@ def prescreen(request):
             FirstList = []
             for i in FirstQueryset:
                 FirstList.append(i.ec_num)
-            SecondQueryset = Reactions.objects \
+            SecondQueryset = Reaction.objects \
                 .filter(ec_num__in=FirstList) \
                 .filter(substrate__contains=RequestDict["substrate_group"]) \
                 .filter(product__contains=RequestDict["product_group"])
