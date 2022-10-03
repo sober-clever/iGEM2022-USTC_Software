@@ -170,7 +170,7 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                 conf = rpyc.core.protocol.DEFAULT_CONFIG
                 conf['allow_pickle'] = True
                 conf['sync_request_timeout'] = None
-                conn = rpyc.connect('1.14.147.7', port=9998, config=conf)
+                conn = rpyc.connect('118.195.163.237', port=9998, config=conf)
                 ret_val = conn.root.get_enz_dic(PrescreenResult, user_reaction)
                 # ret_json = json.dumps(ret_val)
                 # ret_val = {}
