@@ -209,7 +209,7 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                     dic_[enzyme.ec_num]['kinetic'] = []
                     dic_[enzyme.ec_num]['substrate_info'] = []
                     if req_orga != "":  # 有要求的种属
-                        KinQueryset = Phtemp.objects.filter(speciesname=req_orga).filter(ec_num=enzyme.ec_num)
+                        KinQueryset = Phtemp.objects.filter(soundex=req_orga).filter(ec_num=enzyme.ec_num)
                         # Kcat_KmQueryset = Kcat_Km.objects.filter(ec_num=enzyme.ec_num).filter(speciesname=req_orga)
                         for elm in KinQueryset:
                             refrence_link = "https://www.brenda-enzymes.org/literature.php?e=" + elm.ec_num \

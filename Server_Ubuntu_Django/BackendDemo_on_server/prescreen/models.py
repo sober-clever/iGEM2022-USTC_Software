@@ -295,7 +295,9 @@ class Phtemp(models.Model):
     ph = models.CharField(max_length=100)
     temp = models.CharField(max_length=100)
     literture = models.CharField(max_length=100)
+    soundex = models.CharField(max_length=50)
 
     class Meta:
         managed = False
         db_table = 'Phtemp'
+        indexes = [models.index(fields=["soundex"]),]
