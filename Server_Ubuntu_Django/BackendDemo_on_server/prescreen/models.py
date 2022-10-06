@@ -287,3 +287,15 @@ class Kinetic(models.Model):
     class Meta:
         managed = False
         db_table = 'kinetic'
+
+
+class Phtemp(models.Model):
+    ec_num = models.CharField(max_length=20)
+    speciesname = models.CharField(max_length=200)
+    ph = models.CharField(max_length=100)
+    temp = models.CharField(max_length=100)
+    literture = models.CharField(max_length=100)
+
+    class Meta:
+        managed = False
+        db_table = 'Phtemp'

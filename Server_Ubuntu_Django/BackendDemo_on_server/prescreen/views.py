@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
 from .models import Query, Redox, Mustcontain, Elimination, Ismerization, \
-    Hydrolysis, Transfer, Ligation, Enzyme, Reaction, Organism, Kinetic
+    Hydrolysis, Transfer, Ligation, Enzyme, Reaction, Organism, Kinetic, Phtemp, Km, Kcat_Km
 from .serializers import QuerySerializer
 from rdkit import Chem
 # from .CalSim_Ori import CopeEnz
@@ -206,11 +206,16 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
 
                 for enzyme in EnzymeQuerySet:
                     dic_[enzyme.ec_num]['name'] = enzyme.ec_name
+                    dic_[enzyme.ec_num]['kinetic'] = []
+                    dic_[enzyme.ec_num]['substrate_info'] = []
                     if req_orga != "":  # 有要求的种属
-                        KinQueryset = Kinetic.objects.filter(speciesname=req_orga).filter(ec_num=enzyme.ec_num)
+                        KinQueryset = Phtemp.objects.filter(speciesname=req_orga).filter(ec_num=enzyme.ec_num)
+                        # Kcat_KmQueryset = Kcat_Km.objects.filter(ec_num=enzyme.ec_num).filter(speciesname=req_orga)
                         for elm in KinQueryset:
-                            dic_[enzyme.ec_num]['temp'] = elm.temp
-                            dic_[enzyme.ec_num]['ph'] = elm.ph
+                            refrence_link = "https://www.brenda-enzymes.org/literature.php?e=" + elm.ec_num \
+                                            +"&r="+elm.literture
+                            dic_[enzyme.ec_num]['kinetic'].append([elm.ph, elm.temp, refrence_link])
+
 
                 # for elm in dic_['ecs']:
                 #     ReactionQuerySet = Reaction.objects.filter(ec_num=elm).filter(reaction=dic_[elm]\
