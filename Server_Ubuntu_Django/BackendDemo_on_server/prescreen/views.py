@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.db import connection
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
@@ -41,6 +42,12 @@ def article_list(request):
         return Response(json.dumps(new_dic))
 
 
+def get_soundex(string: str):
+    with connection.cursor() as cursor:
+        cursor.execute(f"SELECT SOUNDEX({string})")
+        return cursor.fetchone()[0]
+
+
 @api_view(['GET', 'POST'])
 def query_list(request):    # 用于根据给出的反应查询酶的信息
     if request.method == "GET":
@@ -73,6 +80,7 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                     ChoiceQueryset = Elimination.objects.all()
                 elif dic["type"] == 5:
                     ChoiceQueryset = Ismerization.objects.all()
+                    from django.db import connection
                 else:
                     ChoiceQueryset = Ligation.objects.all()
                 FirstQueryset = FirstQueryset.union(ChoiceQueryset)
@@ -222,7 +230,8 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                     dic_[enzyme.ec_num]['kinetic'] = []
 
                     if req_orga != "":  # 动力学常数需要事先给出种属
-                        KinQueryset = Phtemp.objects.filter(speciesname=req_orga).filter(ec_num=enzyme.ec_num)
+                        req_soundex = get_soundex(req_orga)
+                        KinQueryset = Phtemp.objects.filter(soundex=req_soundex).filter(ec_num=enzyme.ec_num)
                         for elm in KinQueryset:
                             refrence_link = "https://www.brenda-enzymes.org/literature.php?e=" + elm.ec_num \
                                             +"&r="+elm.literture
