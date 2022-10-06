@@ -148,10 +148,22 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                 for elm in SecondQueryset:
                     # if elm.reaction in test_lis:
                     #     continue
-                    if required_cofactor != [] and elm.cofactor not in required_cofactor:
-                        continue
+
                     if req_orga != "" and elm.ec_num not in req_orga_ecs:   # 酶对应的种属需要满足用户要求的种属
                         continue
+
+                    if required_cofactor != [] and not elm.cofactor:
+                        continue
+
+                    lis = elm.cofactor.split(" ")
+                    # print(lis)
+                    flag = False
+                    for co in lis:
+                        if co in required_cofactor:
+                            flag = True  # 说明辅因子符合要求
+                    if required_cofactor != [] and flag is False:  # 该酶的辅因子不符合要求
+                        continue
+
                     substrate = Chem.MolFromSmiles(elm.substrate)
                     product = Chem.MolFromSmiles(elm.product)
                     if not substrate or not product:
@@ -210,14 +222,14 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                     dic_[enzyme.ec_num]['kinetic'] = []
 
                     if req_orga != "":  # 动力学常数需要事先给出种属
-                        KinQueryset = Phtemp.objects.filter(soundex=req_orga).filter(ec_num=enzyme.ec_num)
+                        KinQueryset = Phtemp.objects.filter(speciesname=req_orga).filter(ec_num=enzyme.ec_num)
                         for elm in KinQueryset:
                             refrence_link = "https://www.brenda-enzymes.org/literature.php?e=" + elm.ec_num \
                                             +"&r="+elm.literture
                             dic_[enzyme.ec_num]['kinetic'].append([elm.ph, elm.temp, refrence_link])
 
                         dic_[enzyme.ec_num]['substrate_info'] = []
-                        if dic_[enzyme.ec_num]['cofactor'] in ["NAD+", "NADH", "NADPH"]:
+                        if dic_[enzyme.ec_num]['cofactor'] in ["NADH", "NADPH"]:
                             Kcat_KmQueryset = Kcat_Km.objects.filter(ec_num=enzyme.ec_num).filter(speciesname=req_orga)
                             KmQueryset = Km.objects.filter(ec_num=enzyme.ec_num).filter(speciesname=req_orga)
                             kcat_km_sub_info = []
