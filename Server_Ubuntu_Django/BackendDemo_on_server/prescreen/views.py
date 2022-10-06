@@ -139,7 +139,7 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                 required_cofactor = dic["cofactors"]
 
                 cnt = 0
-                req_orga = dic["classtype"]  # abbr. for required_organism 获得种属信息（用户未填则为空）
+                req_orga = dic["organism"]  # abbr. for required_organism 获得种属信息（用户未填则为空）
                 OrganismQueryset = Organism.objects.filter(organism=req_orga)
                 req_orga_ecs = []
                 for elm in OrganismQueryset:
@@ -206,17 +206,29 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
 
                 for enzyme in EnzymeQuerySet:
                     dic_[enzyme.ec_num]['name'] = enzyme.ec_name
+
                     dic_[enzyme.ec_num]['kinetic'] = []
-                    dic_[enzyme.ec_num]['substrate_info'] = []
-                    if req_orga != "":  # 有要求的种属
+
+                    if req_orga != "":  # 动力学常数需要事先给出种属
                         KinQueryset = Phtemp.objects.filter(soundex=req_orga).filter(ec_num=enzyme.ec_num)
-                        # Kcat_KmQueryset = Kcat_Km.objects.filter(ec_num=enzyme.ec_num).filter(speciesname=req_orga)
                         for elm in KinQueryset:
                             refrence_link = "https://www.brenda-enzymes.org/literature.php?e=" + elm.ec_num \
                                             +"&r="+elm.literture
                             dic_[enzyme.ec_num]['kinetic'].append([elm.ph, elm.temp, refrence_link])
 
-
+                        dic_[enzyme.ec_num]['substrate_info'] = []
+                        if dic_[enzyme.ec_num]['cofactor'] in ["NADH", "NADPH"]:
+                            Kcat_KmQueryset = Kcat_Km.objects.filter(ec_num=enzyme.ec_num).filter(speciesname=req_orga)
+                            KmQueryset = Km.objects.filter(ec_num=enzyme.ec_num).filter(speciesname=req_orga)
+                            kcat_km_sub_info = []
+                            for kcat_km in Kcat_KmQueryset:
+                                kcat_km_sub_info.append(kcat_km.substrate)
+                            km_sub_info = []
+                            for km in KmQueryset:
+                                km_sub_info.append(km.substrate)
+                            for elm in kcat_km_sub_info:
+                                if elm in km_sub_info:
+                                    dic_[enzyme.ec_num]['substrate_info'].append(elm)
                 # for elm in dic_['ecs']:
                 #     ReactionQuerySet = Reaction.objects.filter(ec_num=elm).filter(reaction=dic_[elm]\
                 #         ['most_similar_reaction'])

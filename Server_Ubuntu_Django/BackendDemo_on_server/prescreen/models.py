@@ -246,6 +246,7 @@ class Reaction(models.Model):   # Reaction 数据表的补充，添加了辅因�
 
 class Km(models.Model):
     ec_num = models.CharField(max_length=20)
+    substrate = models.CharField(max_length=200)
     speciesname = models.CharField(max_length=200)  # 种属
     temp = models.FloatField()
     ph = models.FloatField()
@@ -300,4 +301,4 @@ class Phtemp(models.Model):
     class Meta:
         managed = False
         db_table = 'Phtemp'
-        indexes = [models.index(fields=["soundex"]),]
+        indexes = [models.Index(fields=["soundex"]),]
