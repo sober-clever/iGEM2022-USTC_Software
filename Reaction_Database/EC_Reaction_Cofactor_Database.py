@@ -14,7 +14,7 @@ create table `brenda`.`reaction`(
     );
 """)
 
-with open(".\\cofactor.txt", "r") as infile:
+with open(".\\cofactor_new.txt", "r") as infile:
     with open(".\\EC_Reaction_Cofactor_Database.sql", 'a') as outfile:
         # ReactionList = []
         # ReactionUniqueList = []
