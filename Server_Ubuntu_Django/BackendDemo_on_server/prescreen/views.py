@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.db import connections
+from django.db import connection
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
@@ -43,7 +43,7 @@ def article_list(request):
 
 
 def get_soundex(string: str):
-    with connections.cursor() as cursor:
+    with connection.cursor() as cursor:
         cursor.execute(f"SELECT SOUNDEX({string})")
         return cursor.fetchone()[0]
 
