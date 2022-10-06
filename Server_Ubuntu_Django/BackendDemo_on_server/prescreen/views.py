@@ -217,17 +217,19 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                             dic_[enzyme.ec_num]['kinetic'].append([elm.ph, elm.temp, refrence_link])
 
                         dic_[enzyme.ec_num]['substrate_info'] = []
-                        if dic_[enzyme.ec_num]['cofactor'] in ["NADH", "NADPH"]:
+                        if dic_[enzyme.ec_num]['cofactor'] in ["NAD+", "NADH", "NADPH"]:
                             Kcat_KmQueryset = Kcat_Km.objects.filter(ec_num=enzyme.ec_num).filter(speciesname=req_orga)
                             KmQueryset = Km.objects.filter(ec_num=enzyme.ec_num).filter(speciesname=req_orga)
                             kcat_km_sub_info = []
                             for kcat_km in Kcat_KmQueryset:
-                                kcat_km_sub_info.append(kcat_km.substrate)
+                                if kcat_km not in kcat_km_sub_info:
+                                    kcat_km_sub_info.append(kcat_km.substrate)
                             km_sub_info = []
                             for km in KmQueryset:
-                                km_sub_info.append(km.substrate)
+                                if km not in km_sub_info:
+                                    km_sub_info.append(km.substrate)
                             for elm in kcat_km_sub_info:
-                                if elm in km_sub_info:
+                                if elm in km_sub_info and elm not in dic_[enzyme.ec_num]['substrate_info']:
                                     dic_[enzyme.ec_num]['substrate_info'].append(elm)
                 # for elm in dic_['ecs']:
                 #     ReactionQuerySet = Reaction.objects.filter(ec_num=elm).filter(reaction=dic_[elm]\
