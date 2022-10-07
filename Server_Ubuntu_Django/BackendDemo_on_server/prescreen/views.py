@@ -3,9 +3,9 @@ from django.db import connection
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
-from .models import Query, Redox, Mustcontain, Elimination, Ismerization, \
+from .models import Query, Query2, Redox, Mustcontain, Elimination, Ismerization, \
     Hydrolysis, Transfer, Ligation, Enzyme, Reaction, Organism, Kinetic, Phtemp, Km, Kcat_Km
-from .serializers import QuerySerializer
+from .serializers import QuerySerializer, Query2Serializer
 from rdkit import Chem
 # from .CalSim_Ori import CopeEnz
 # import socket
@@ -221,7 +221,7 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                 # dic_['type'] = type(ret_val)
                 # dic_['string'] = ret_val
                 # dic_['content'] = ret_val
-                req_soundex = get_soundex(req_orga)
+                # req_soundex = get_soundex(req_orga)
                 EnzymeQuerySet = Enzyme.objects.filter(ec_num__in=dic_['ecs'])
                 KinQueryset1 = Phtemp.objects.filter(speciesname=req_orga)
                 for enzyme in EnzymeQuerySet:
@@ -237,20 +237,20 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                             dic_[enzyme.ec_num]['kinetic'].append([elm.ph, elm.temp, refrence_link])
 
                         dic_[enzyme.ec_num]['substrate_info'] = []
-                        # if dic_[enzyme.ec_num]['cofactor'] in ["NADH", "NADPH"]:
-                        #     Kcat_KmQueryset = Kcat_Km.objects.filter(ec_num=enzyme.ec_num).filter(speciesname=req_orga)
-                        #     KmQueryset = Km.objects.filter(ec_num=enzyme.ec_num).filter(speciesname=req_orga)
-                        #     kcat_km_sub_info = []
-                        #     for kcat_km in Kcat_KmQueryset:
-                        #         if kcat_km not in kcat_km_sub_info:
-                        #             kcat_km_sub_info.append(kcat_km.substrate)
-                        #     km_sub_info = []
-                        #     for km in KmQueryset:
-                        #         if km not in km_sub_info:
-                        #             km_sub_info.append(km.substrate)
-                        #     for elm in kcat_km_sub_info:
-                        #         if elm in km_sub_info and elm not in dic_[enzyme.ec_num]['substrate_info']:
-                        #             dic_[enzyme.ec_num]['substrate_info'].append(elm)
+                        if dic_[enzyme.ec_num]['cofactor'] in ["NADH", "NADPH"]:
+                            Kcat_KmQueryset = Kcat_Km.objects.filter(ec_num=enzyme.ec_num).filter(speciesname=req_orga)
+                            KmQueryset = Km.objects.filter(ec_num=enzyme.ec_num).filter(speciesname=req_orga)
+                            kcat_km_sub_info = []
+                            for kcat_km in Kcat_KmQueryset:
+                                if kcat_km not in kcat_km_sub_info:
+                                    kcat_km_sub_info.append(kcat_km.substrate)
+                            km_sub_info = []
+                            for km in KmQueryset:
+                                if km not in km_sub_info:
+                                    km_sub_info.append(km.substrate)
+                            for elm in kcat_km_sub_info:
+                                if elm in km_sub_info and elm not in dic_[enzyme.ec_num]['substrate_info']:
+                                    dic_[enzyme.ec_num]['substrate_info'].append(elm)
                 # for elm in dic_['ecs']:
                 #     ReactionQuerySet = Reaction.objects.filter(ec_num=elm).filter(reaction=dic_[elm]\
                 #         ['most_similar_reaction'])
@@ -287,11 +287,26 @@ def fun(ec, sub, ogsm, temp, ph):
     # 返回的两个值可能相等，表示只有一个值，无需区间表示
     return (km_min1, km_max1), (kcatkm_min1, kcatkm_max1), (km_min2, km_max2), (kcatkm_min2, kcatkm_max2)
 
+
 @api_view(['POST'])
 def sencond_query(request):
     if request.method == "POST":
-        dic = request.data
-
+        serializer = Query2Serializer(data=request.data)
+        if serializer.is_valid():
+            dic = request.data
+            ph = float(dic['ph'])
+            temp = float(dic['temp'])
+            substrate_info = dic['substrate_info']
+            ec_num = dic['ec_num']
+            organism = dic['organism']
+            km1_range, kcat1_range, km2_range, kcat2_range = fun(ec_num, substrate_info, organism, temp, ph)
+            dic_ = {}
+            dic_['km1_range'] = km1_range
+            dic_['kcat1_range'] = kcat1_range
+            dic_['km2_range'] = km2_range
+            dic_['kcat2_range'] = kcat2_range
+            return Response(json.dumps(dic_), status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 # primary api for test
 # def prescreen(request):

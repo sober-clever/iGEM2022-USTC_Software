@@ -221,6 +221,25 @@ class Query(models.Model):
     created = models.DateTimeField(auto_now=True)
 
 
+class Query2(models.Model):
+    # reactant = models.ForeignKey(Compound, on_delete=models.CASCADE, related_name='Queries1')
+
+    # product = models.ForeignKey(Compound, on_delete=models.CASCADE, related_name='Queries2')
+
+    ph = models.CharField(max_length=100)
+
+    temp = models.CharField(max_length=100)
+
+    substrate_info = models.CharField(max_length=200)
+
+    ec_num = models.CharField(max_length=100)
+
+    organism = models.CharField(max_length=200)
+
+    # 用于记录这个查询什么时候被创建
+    created = models.DateTimeField(auto_now=True)
+
+
 class Enzyme(models.Model):
     ec_num = models.CharField(max_length=20, blank=True, primary_key=True)
 
