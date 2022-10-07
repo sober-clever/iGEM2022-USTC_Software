@@ -226,9 +226,9 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                 # dic_['content'] = ret_val
                 req_soundex = get_soundex(req_orga)
                 EnzymeQuerySet = Enzyme.objects.filter(ec_num__in=dic_['ecs'])
-                KinQueryset1 = Phtemp.objects.filter(soundex__contain=req_soundex)
-                Kcat_KmQueryset1 = Kcat_Km.objects.filter(soundex__contain=req_soundex)
-                KmQueryset1 = Km.objects.filter(soundex__contain=req_soundex)
+                KinQueryset1 = Phtemp.objects.filter(soundex__contains=req_soundex)
+                Kcat_KmQueryset1 = Kcat_Km.objects.filter(soundex__contains=req_soundex)
+                KmQueryset1 = Km.objects.filter(soundex__contains=req_soundex)
                 for enzyme in EnzymeQuerySet:
                     dic_[enzyme.ec_num]['name'] = enzyme.ec_name
 
