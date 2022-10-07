@@ -226,9 +226,9 @@ class Query2(models.Model):
 
     # product = models.ForeignKey(Compound, on_delete=models.CASCADE, related_name='Queries2')
 
-    ph = models.CharField(max_length=100)
+    ph = models.CharField(max_length=100, blank=True)
 
-    temp = models.CharField(max_length=100)
+    temp = models.CharField(max_length=100, blank=True)
 
     substrate_info = models.CharField(max_length=200)
 
@@ -236,7 +236,7 @@ class Query2(models.Model):
 
     organism = models.CharField(max_length=200)
 
-    cofactor2 = models.CharField(max_length=200)
+    cofactor2 = models.CharField(max_length=200, null=True)
 
     # 用于记录这个查询什么时候被创建
     created = models.DateTimeField(auto_now=True)

@@ -163,7 +163,10 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                     if required_cofactor != [] and not elm.cofactor:
                         continue
 
-                    lis = elm.cofactor.split(" ")
+                    if elm.cofactor:
+                        lis = elm.cofactor.split(" ")
+                    else:
+                        lis = []
                     # print(lis)
                     flag = False
                     for co in lis:
@@ -223,9 +226,9 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                 # dic_['content'] = ret_val
                 req_soundex = get_soundex(req_orga)
                 EnzymeQuerySet = Enzyme.objects.filter(ec_num__in=dic_['ecs'])
-                KinQueryset1 = Phtemp.objects.filter(soundex=req_soundex)
-                Kcat_KmQueryset1 = Kcat_Km.objects.filter(soundex=req_soundex)
-                KmQueryset1 = Km.objects.filter(soundex=req_soundex)
+                KinQueryset1 = Phtemp.objects.filter(soundex__contain=req_soundex)
+                Kcat_KmQueryset1 = Kcat_Km.objects.filter(soundex__contain=req_soundex)
+                KmQueryset1 = Km.objects.filter(soundex__contain=req_soundex)
                 for enzyme in EnzymeQuerySet:
                     dic_[enzyme.ec_num]['name'] = enzyme.ec_name
 
@@ -302,24 +305,27 @@ def fun(ec, sub, ogsm, temp, ph, cofactor):
         ph = float(ph)
         ph_low = ph - 2
         ph_high = ph + 2
+
         KmQueryset1 = KmQueryset1.filter(ph__range=(ph_low, ph_high))
         Kcat_KmQueryset1 = Kcat_KmQueryset1.filter(ph__range=(ph_low, ph_high))
         KmQueryset2 = KmQueryset2.filter(ph__range=(ph_low, ph_high))
         Kcat_KmQueryset2 = Kcat_KmQueryset2.filter(ph__range=(ph_low, ph_high))
 
-
     km_min1, km_max1 = 1e5, 0
     kcatkm_min1, kcatkm_max1 = 1e5, 0
     km_min2, km_max2 = 1e5, 0
     kcatkm_min2, kcatkm_max2 = 1e5, 0
+
     for km in KmQueryset1:
         km_min1, km_max1 = min(km_min1, km.km), max(km_max1, km.km)
     for kcatkm in Kcat_KmQueryset1:
         kcatkm_min1, kcatkm_max1 = min(kcatkm_min1, kcatkm.kcat_km), max(kcatkm_max1, kcatkm.kcat_km)
+
     for km in KmQueryset2:
         km_min2, km_max2 = min(km_min2, km.km), max(km_max2, km.km)
     for kcatkm in Kcat_KmQueryset2:
         kcatkm_min2, kcatkm_max2 = min(kcatkm_min2, kcatkm.kcat_km), max(kcatkm_max2, kcatkm.kcat_km)
+
     # 返回的两个值可能相等，表示只有一个值，无需区间表示
     return (km_min1, km_max1), (kcatkm_min1, kcatkm_max1), (km_min2, km_max2), (kcatkm_min2, kcatkm_max2)
 
