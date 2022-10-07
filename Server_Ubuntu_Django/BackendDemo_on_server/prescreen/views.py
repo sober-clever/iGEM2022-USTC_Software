@@ -44,7 +44,7 @@ def article_list(request):
 
 def get_soundex(string: str):
     with connection.cursor() as cursor:
-        cursor.execute(f"SELECT SOUNDEX({string})")
+        cursor.execute("SELECT SOUNDEX(%s)", (string,))
         return cursor.fetchone()[0]
 
 
@@ -221,7 +221,7 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                 # dic_['type'] = type(ret_val)
                 # dic_['string'] = ret_val
                 # dic_['content'] = ret_val
-                # req_soundex = get_soundex(req_orga)
+                req_soundex = get_soundex(req_orga)
                 EnzymeQuerySet = Enzyme.objects.filter(ec_num__in=dic_['ecs'])
                 KinQueryset1 = Phtemp.objects.filter(speciesname=req_orga)
                 for enzyme in EnzymeQuerySet:
