@@ -301,4 +301,4 @@ class Phtemp(models.Model):
     class Meta:
         managed = False
         db_table = 'Phtemp'
-        indexes = [models.Index(fields=["soundex"]),]
+        indexes = [models.Index(fields=["speciesname"]), models.Index(fields=["ec_num"])]

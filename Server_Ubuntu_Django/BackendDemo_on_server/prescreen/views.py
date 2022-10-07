@@ -223,15 +223,15 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                 # dic_['content'] = ret_val
 
                 EnzymeQuerySet = Enzyme.objects.filter(ec_num__in=dic_['ecs'])
-
+                KinQueryset1 = Phtemp.objects.filter(speciesname=req_orga)
                 for enzyme in EnzymeQuerySet:
                     dic_[enzyme.ec_num]['name'] = enzyme.ec_name
 
                     dic_[enzyme.ec_num]['kinetic'] = []
 
                     if req_orga != "":  # 动力学常数需要事先给出种属
-                        req_soundex = get_soundex(req_orga)
-                        KinQueryset = Phtemp.objects.filter(soundex=req_soundex).filter(ec_num=enzyme.ec_num)
+                        # req_soundex = get_soundex(req_orga)
+                        KinQueryset = KinQueryset1.filter(ec_num=enzyme.ec_num)
                         for elm in KinQueryset:
                             refrence_link = "https://www.brenda-enzymes.org/literature.php?e=" + elm.ec_num \
                                             +"&r="+elm.literture
@@ -265,6 +265,28 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
             #     dic['content'] = ret_val
             return Response(json.dumps(dic_), status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+def fun(ec, sub, ogsm, temp, ph):
+
+    KmQueryset1 = Km.objects.filter(ec_num=ec).filter(substrate=sub).filter(speciesname=ogsm).filter(temp=temp).filter(ph=ph)
+    Kcat_KmQueryset1 = Kcat_Km.objects.filter(ec_num=ec).filter(substrate=sub).filter(speciesname=ogsm).filter(temp=temp).filter(ph=ph)
+    KmQueryset2 = Km.objects.filter(ec_num="1.1.1.47").filter(substrate=sub).filter(speciesname=ogsm).filter(temp=temp).filter(ph=ph)
+    Kcat_KmQueryset2 = Kcat_Km.objects.filter(ec_num="1.1.1.47").filter(substrate=sub).filter(speciesname=ogsm).filter(temp=temp).filter(ph=ph)
+    km_min1, km_max1 = 1e5, 0
+    kcatkm_min1, kcatkm_max1 = 1e5, 0
+    km_min2, km_max2 = 1e5, 0
+    kcatkm_min2, kcatkm_max2 = 1e5, 0
+    for km in KmQueryset1:
+        km_min1, km_max1 = min(km_min1, km), max(km_max1, km)
+    for kcatkm in Kcat_KmQueryset1:
+        kcatkm_min1, kcatkm_max1 = min(kcatkm_min1, kcatkm), max(kcatkm_max1, kcatkm)
+    for km in KmQueryset2:
+        km_min2, km_max2 = min(km_min2, km), max(km_max2, km)
+    for kcatkm in Kcat_KmQueryset2:
+        kcatkm_min2, kcatkm_max2 = min(kcatkm_min2, kcatkm), max(kcatkm_max2, kcatkm)
+    # 返回的两个值可能相等，表示只有一个值，无需区间表示
+    return (km_min1, km_max1), (kcatkm_min1, kcatkm_max1), (km_min2, km_max2), (kcatkm_min2, kcatkm_max2)
 
 
 def prescreen(request):
