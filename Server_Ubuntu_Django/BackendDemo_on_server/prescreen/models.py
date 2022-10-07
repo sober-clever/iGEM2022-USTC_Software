@@ -236,6 +236,8 @@ class Query2(models.Model):
 
     organism = models.CharField(max_length=200)
 
+    cofactor2 = models.CharField(max_length=200)
+
     # 用于记录这个查询什么时候被创建
     created = models.DateTimeField(auto_now=True)
 
@@ -270,11 +272,12 @@ class Km(models.Model):
     temp = models.FloatField()
     ph = models.FloatField()
     km = models.FloatField()
+    soundex = models.CharField(max_length=200)
 
     class Meta:
         managed = False
         db_table = 'km'
-        indexes = [models.Index([ec_num, soundex])]
+        indexes = [models.Index(fields=["ec_num", "soundex"])]
 
 
 class Kcat_Km(models.Model):
@@ -284,11 +287,12 @@ class Kcat_Km(models.Model):
     temp = models.FloatField()
     ph = models.FloatField()
     kcat_km = models.FloatField()
+    soundex = models.CharField(max_length=200)
 
     class Meta:
         managed = False
         db_table = 'kcat_km'
-        indexes = [models.Index([ec_num, soundex])]
+        indexes = [models.Index(fields=["ec_num", "soundex"])]
 
 
 class Organism(models.Model):   # 未设主键，需要在数据表 Organism 内添加自增 id

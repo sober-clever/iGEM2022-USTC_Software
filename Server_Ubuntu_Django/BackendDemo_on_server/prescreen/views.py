@@ -288,8 +288,13 @@ def fun(ec, sub, ogsm, temp, ph):
     return (km_min1, km_max1), (kcatkm_min1, kcatkm_max1), (km_min2, km_max2), (kcatkm_min2, kcatkm_max2)
 
 
-@api_view(['POST'])
+@api_view(['GET', 'POST'])
 def sencond_query(request):
+    if request.method == "GET":
+        queries = Query2.objects.all()
+        serializer = Query2Serializer(queries, many=True)
+        return Response(serializer.data)
+
     if request.method == "POST":
         serializer = Query2Serializer(data=request.data)
         if serializer.is_valid():
