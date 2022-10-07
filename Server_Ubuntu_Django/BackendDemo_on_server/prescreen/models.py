@@ -274,6 +274,7 @@ class Km(models.Model):
     class Meta:
         managed = False
         db_table = 'km'
+        indexes = [models.Index([ec_num, soundex])]
 
 
 class Kcat_Km(models.Model):
@@ -287,6 +288,7 @@ class Kcat_Km(models.Model):
     class Meta:
         managed = False
         db_table = 'kcat_km'
+        indexes = [models.Index([ec_num, soundex])]
 
 
 class Organism(models.Model):   # 未设主键，需要在数据表 Organism 内添加自增 id

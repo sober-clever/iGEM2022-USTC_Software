@@ -238,8 +238,8 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
 
                         dic_[enzyme.ec_num]['substrate_info'] = []
                         if dic_[enzyme.ec_num]['cofactor'] in ["NADH", "NADPH"]:
-                            Kcat_KmQueryset = Kcat_Km.objects.filter(ec_num=enzyme.ec_num).filter(speciesname=req_orga)
-                            KmQueryset = Km.objects.filter(ec_num=enzyme.ec_num).filter(speciesname=req_orga)
+                            Kcat_KmQueryset = Kcat_Km.objects.filter(ec_num=enzyme.ec_num, soundex=get_soundex(req_orga))
+                            KmQueryset = Km.objects.filter(ec_num=enzyme.ec_num, soundex=get_soundex(req_orga))
                             kcat_km_sub_info = []
                             for kcat_km in Kcat_KmQueryset:
                                 if kcat_km not in kcat_km_sub_info:
