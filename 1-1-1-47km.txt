@@ -1,0 +1,270 @@
+1.1.1.47	0.0003	NAD+	Sus scrofa	30	9.9
+1.1.1.47	0.0015	D-glucose 6-phosphate	Rattus norvegicus	-	-
+1.1.1.47	0.0024	beta-D-glucose	Sus scrofa	37	7.5
+1.1.1.47	0.0028	NAD+	Sus scrofa	-	9.0
+1.1.1.47	0.0029	D-Glucose-6-phosphate	Sus scrofa	37	7.5
+1.1.1.47	0.0032	beta-D-glucose	Sus scrofa	37	10.0
+1.1.1.47	0.0036	NADP+	Sus scrofa	37	7.5
+1.1.1.47	0.0046	NADP+	Sus scrofa	37	10.0
+1.1.1.47	0.0051	NAD+	Sus scrofa	37	7.5
+1.1.1.47	0.0051	NADP+	Priestia megaterium	-	-
+1.1.1.47	0.0072	D-Glucose-6-phosphate	Sus scrofa	37	10.0
+1.1.1.47	0.0072	NADP+	Sus scrofa	-	10.0
+1.1.1.47	0.0076	NADP+	Priestia megaterium	-	-
+1.1.1.47	0.0083	D-Glucose-6-phosphate	Sus scrofa	-	10.0
+1.1.1.47	0.0093	NADP+	Priestia megaterium	-	-
+1.1.1.47	0.01	D-glucose 6-phosphate	Oncorhynchus mykiss	25	7.5
+1.1.1.47	0.01	galactose 6-phosphate	Oncorhynchus mykiss	25	7.5
+1.1.1.47	0.01	galactose 6-phosphate	Oncorhynchus mykiss	25	7.5
+1.1.1.47	0.01	NADP+	Gluconobacter oxydans	25	8.0
+1.1.1.47	0.011	beta-D-glucose	Sus scrofa	37	7.5
+1.1.1.47	0.013	NADP+	Sus scrofa	37	7.5
+1.1.1.47	0.018	NAD+	Priestia megaterium	-	-
+1.1.1.47	0.018	NADP+	Priestia megaterium	30	8.0
+1.1.1.47	0.02	D-glucose 6-phosphate	Oncorhynchus mykiss	25	7.5
+1.1.1.47	0.02	NADP+	Priestia megaterium	30	8.0
+1.1.1.47	0.0212	NAD+	Bos taurus	30	9.5
+1.1.1.47	0.024	NADP+	Nostoc sp.	-	7.5
+1.1.1.47	0.0255	D-glucose 6-phosphate	Bos taurus	-	-
+1.1.1.47	0.026	NADP+	Mus musculus	-	-
+1.1.1.47	0.026	NADP+	Priestia megaterium	-	-
+1.1.1.47	0.027	NADP+	Priestia megaterium	-	-
+1.1.1.47	0.028	NADP+	Sus scrofa	37	10.0
+1.1.1.47	0.03	NADP+	Bacillus thuringiensis serovar kurstaki	55	9.0
+1.1.1.47	0.03	NADP+	Saccharolobus solfataricus	70	9.0
+1.1.1.47	0.032	beta-D-glucose	Sus scrofa	37	10.0
+1.1.1.47	0.037	NADP+	Priestia megaterium	253C	-
+1.1.1.47	0.04	D-galactose 6-phosphate	Oncorhynchus mykiss	25	7.5
+1.1.1.47	0.04	D-galactose 6-phosphate	Oncorhynchus mykiss	25	7.5
+1.1.1.47	0.049	D-glucose 6-phosphate	Mus musculus	-	-
+1.1.1.47	0.05	NAD+	Oncorhynchus mykiss	25	7.5
+1.1.1.47	0.05	NADP+	Bacillus amyloliquefaciens	37	8.0
+1.1.1.47	0.061	NADP+	Bacillus sp. (in: Bacteria)	-	-
+1.1.1.47	0.062	NADP+	Sus scrofa	37	10.0
+1.1.1.47	0.062	NADP+	Bos taurus	30	9.5
+1.1.1.47	0.072	NAD+	Bacillus sp. (in: Bacteria)	25	8.0
+1.1.1.47	0.072	NADP+	Lysinibacillus sphaericus	25	8.0
+1.1.1.47	0.072	NADP+	Lysinibacillus sphaericus	25	8.0
+1.1.1.47	0.081	NAD+	Priestia megaterium	30	8.0
+1.1.1.47	0.082	NAD+	Bacillus sp. (in: Bacteria)	-	-
+1.1.1.47	0.088	NAD+	Priestia megaterium	30	8.0
+1.1.1.47	0.09	NAD+	Oncorhynchus mykiss	25	10
+1.1.1.47	0.09	NADP+	Oncorhynchus mykiss	25	10
+1.1.1.47	0.094	NAD+	Lysinibacillus sphaericus	25	8.0
+1.1.1.47	0.094	NAD+	Lysinibacillus sphaericus	25	8.0
+1.1.1.47	0.1	D-glucose 6-phosphate	Oncorhynchus mykiss	25	10
+1.1.1.47	0.1	NADP+	Oncorhynchus mykiss	25	7.5
+1.1.1.47	0.11	NAD+	Bacillus subtilis	25	8.0
+1.1.1.47	0.113	NADP+	Thermoplasma acidophilum	55	7.0
+1.1.1.47	0.14	beta-D-glucose	Halobacterium salinarum	-	-
+1.1.1.47	0.14	NADP+	Saccharolobus solfataricus	70	-
+1.1.1.47	0.15	NAD+	Priestia megaterium	25	8.0
+1.1.1.47	0.15	NADP+	Saccharolobus solfataricus	65	-
+1.1.1.47	0.15	NADP+	Saccharolobus solfataricus	80	-
+1.1.1.47	0.16	NAD+	Priestia megaterium	30	8.0
+1.1.1.47	0.17	beta-D-glucose	Saccharolobus solfataricus	70	6.5
+1.1.1.47	0.17	D-glucose	Saccharolobus solfataricus	70	-
+1.1.1.47	0.17	NAD+	Priestia megaterium	25	8.0
+1.1.1.47	0.17	NAD+	Bacillus thuringiensis serovar kurstaki	55	9.0
+1.1.1.47	0.17	NAD+	Priestia megaterium	-	-
+1.1.1.47	0.17	NAD+	Saccharolobus solfataricus	-	-
+1.1.1.47	0.18	D-xylose	Saccharolobus solfataricus	-	-
+1.1.1.47	0.19	NAD+	Priestia megaterium	-	-
+1.1.1.47	0.19	NADP+	Halobacterium salinarum	-	-
+1.1.1.47	0.197	NADP+	Lysinibacillus sphaericus	25	8.0
+1.1.1.47	0.22	NAD+	Priestia megaterium	25	8.0
+1.1.1.47	0.23	NAD+	Bacillus subtilis	23	7.8
+1.1.1.47	0.25	D-xylose	Saccharolobus solfataricus	-	-
+1.1.1.47	0.25	NAD+	Bacillus amyloliquefaciens	37	8.0
+1.1.1.47	0.25	NAD+	Priestia megaterium	253C	-
+1.1.1.47	0.26	NADP+	Bacillus subtilis	30	7.8
+1.1.1.47	0.285	NADP+	Nostoc sp.	-	7.5
+1.1.1.47	0.293	NAD+	Lysinibacillus sphaericus	25	8.0
+1.1.1.47	0.3	2-deoxy-D-glucose 6-phosphate	Oncorhynchus mykiss	25	7.5
+1.1.1.47	0.3	beta-D-glucose	Thermoproteus tenax	70	7.0
+1.1.1.47	0.31	NAD+	Priestia megaterium	-	-
+1.1.1.47	0.33	NAD+	Priestia megaterium	25	8.0
+1.1.1.47	0.344	NAD+	Bacillus subtilis	25	8.0
+1.1.1.47	0.36	NAD+	Saccharolobus solfataricus	-	-
+1.1.1.47	0.37	NAD+	Priestia megaterium	-	-
+1.1.1.47	0.404	NADP+	Bacillus sp. (in: Bacteria)	25	8.0
+1.1.1.47	0.41	NAD+	Saccharolobus solfataricus	-	-
+1.1.1.47	0.43	NAD+	Saccharolobus solfataricus	-	-
+1.1.1.47	0.44	beta-D-galactose	Saccharolobus solfataricus	-	-
+1.1.1.47	0.44	beta-D-glucose	Saccharolobus solfataricus	70	9.0
+1.1.1.47	0.44	NAD+	Corynebacterium sp.	-	9.8
+1.1.1.47	0.44	NAD+	Corynebacterium sp.	-	-
+1.1.1.47	0.44	NADP+	Saccharolobus solfataricus	70	7.5
+1.1.1.47	0.47	NAD+	Saccharolobus solfataricus	-	-
+1.1.1.47	0.49	NADPH	Halobacterium salinarum	-	-
+1.1.1.47	0.55	D-glucose	Bacillus thuringiensis serovar kurstaki	55	9.0
+1.1.1.47	0.57	beta-D-galactose	Saccharolobus solfataricus	-	-
+1.1.1.47	0.57	NAD+	Saccharolobus solfataricus	70	7.5
+1.1.1.47	0.67	NAD+	Corynebacterium sp.	-	-
+1.1.1.47	0.7	NADP+	Thermoproteus tenax	70	7.0
+1.1.1.47	0.86	NAD+	Thermoproteus tenax	70	7.0
+1.1.1.47	0.86	NAD+	Saccharolobus solfataricus	-	-
+1.1.1.47	0.99	NAD+	Priestia megaterium	30	8.0
+1.1.1.47	1	2-deoxy-D-glucose 6-phosphate	Oncorhynchus mykiss	25	7.5
+1.1.1.47	1	NADP+	Gluconobacter oxydans	-	-
+1.1.1.47	1.2	NAD+	Saccharolobus solfataricus	70	9.0
+1.1.1.47	1.3	beta-D-glucose	Saccharolobus solfataricus	-	-
+1.1.1.47	1.3	NADP+	Saccharolobus solfataricus	70	7.5
+1.1.1.47	1.5	beta-D-glucose	Saccharolobus solfataricus	-	-
+1.1.1.47	1.5	NAD+	Saccharolobus solfataricus	70	7.5
+1.1.1.47	1.67	1-benzyl-3-carbamoylpyridin-1-ium chloride	Saccharolobus solfataricus	-	-
+1.1.1.47	1.9	NADP+	Priestia megaterium	30	8.0
+1.1.1.47	2.2	beta-D-glucose	Saccharolobus solfataricus	70	9.0
+1.1.1.47	2.23	NAD+	Saccharolobus solfataricus	70	-
+1.1.1.47	2.5	1-(3-phenylpropyl)-1,4-dihydropyridine-3-carboxamide	Saccharolobus solfataricus	-	-
+1.1.1.47	2.57	beta-D-glucose	Halobacterium salinarum	-	-
+1.1.1.47	2.64	NAD+	Saccharolobus solfataricus	-	-
+1.1.1.47	2.7	beta-D-glucose	Priestia megaterium	-	-
+1.1.1.47	2.8	beta-D-glucose	Burkholderia cepacia	70	7.0
+1.1.1.47	3	D-galactose 6-phosphate	Oncorhynchus mykiss	25	10.0
+1.1.1.47	3	D-galactose 6-phosphate	Oncorhynchus mykiss	25	10
+1.1.1.47	3.1	D-glucose	Priestia megaterium	37	6.0
+1.1.1.47	3.2	6-O-(beta-D-glucopyranosido)-beta-D-glucopyranoside	Corynebacterium sp.	-	-
+1.1.1.47	3.2	gentiobiose	Corynebacterium sp.	-	9.8
+1.1.1.47	3.3	NAD+	Saccharolobus solfataricus	80	-
+1.1.1.47	3.38	beta-D-glucose	Bos taurus	30	9.5
+1.1.1.47	4	beta-D-glucose	Priestia megaterium	-	-
+1.1.1.47	4	D-glucose	Priestia megaterium	37	6.0
+1.1.1.47	4.1	1-(3-phenylpropyl)-1,4-dihydropyridine-3-carboxamide	Saccharolobus solfataricus	-	-
+1.1.1.47	4.2	2-deoxy-D-glucose	Bacillus subtilis	-	6.5
+1.1.1.47	4.2	beta-D-glucose	Bacillus sp. (in: Bacteria)	-	-
+1.1.1.47	4.3	D-glucose	Priestia megaterium	37	6.0
+1.1.1.47	4.35	1-phenethyl-1,4-dihydropyridine-3-carboxamide	Saccharolobus solfataricus	-	-
+1.1.1.47	4.5	beta-D-glucose	Priestia megaterium	30	8.0
+1.1.1.47	4.5	NAD+	Priestia megaterium	25	9.0
+1.1.1.47	4.59	beta-D-glucose	Saccharolobus solfataricus	70	6.5
+1.1.1.47	4.59	D-glucose	Saccharolobus solfataricus	70	-
+1.1.1.47	4.6	beta-D-glucose	Priestia megaterium	30	8.0
+1.1.1.47	4.6	beta-D-glucose	Sus scrofa	-	9.0
+1.1.1.47	4.8	beta-D-glucose	Bacillus subtilis	-	6.5
+1.1.1.47	5	beta-D-glucose	Gluconobacter oxydans	-	-
+1.1.1.47	5	D-galactose 6-phosphate	Oncorhynchus mykiss	25	10.0
+1.1.1.47	5	D-galactose 6-phosphate	Oncorhynchus mykiss	25	10
+1.1.1.47	5	D-glucose	Gluconobacter oxydans	25	8.0
+1.1.1.47	5.1	D-glucose	Lysinibacillus sphaericus	25	8.0
+1.1.1.47	5.13	1-(3-phenylpropyl)-1,4-dihydropyridine-3-carboxamide	Saccharolobus solfataricus	-	-
+1.1.1.47	5.49	1-benzyl-3-carbamoylpyridin-1-ium chloride	Saccharolobus solfataricus	-	-
+1.1.1.47	5.5	D-glucose	Bacillus amyloliquefaciens	37	8.0
+1.1.1.47	5.59	NAD+	Saccharolobus solfataricus	65	-
+1.1.1.47	5.6	6-O-(beta-D-glucopyranosido)-beta-D-glucopyranoside	Corynebacterium sp.	-	-
+1.1.1.47	6	D-glucose	Lysinibacillus sphaericus	25	8.0
+1.1.1.47	7	NAD+	Priestia megaterium	25	8.0
+1.1.1.47	7.07	1-phenethyl-1,4-dihydropyridine-3-carboxamide	Saccharolobus solfataricus	-	-
+1.1.1.47	7.5	D-glucose	Priestia megaterium	25	8.0
+1.1.1.47	7.5	NADP+	Priestia megaterium	25	8.0
+1.1.1.47	7.9	beta-D-glucose	Priestia megaterium	30	8.0
+1.1.1.47	8	beta-D-glucose	Priestia megaterium	25	8.0
+1.1.1.47	8	beta-D-glucose	Saccharolobus solfataricus	70	9.0
+1.1.1.47	8	D-glucose	Priestia megaterium	25	8.0
+1.1.1.47	8	xylose	Thermoproteus tenax	70	7.0
+1.1.1.47	8.16	1-phenethyl-1,4-dihydropyridine-3-carboxamide	Saccharolobus solfataricus	-	-
+1.1.1.47	8.5	beta-D-glucose	Priestia megaterium	25	8.0
+1.1.1.47	8.5	D-glucose	Priestia megaterium	25	8.0
+1.1.1.47	8.7	beta-D-glucose	Priestia megaterium	-	-
+1.1.1.47	8.7	beta-D-glucose	Bacillus subtilis	25	8.0
+1.1.1.47	8.76	1-benzyl-3-carbamoylpyridin-1-ium chloride	Saccharolobus solfataricus	-	-
+1.1.1.47	9	beta-D-glucose	Priestia megaterium	-	-
+1.1.1.47	9.2	beta-D-glucose	Priestia megaterium	30	8.0
+1.1.1.47	9.5	beta-D-glucose	Priestia megaterium	-	-
+1.1.1.47	9.8	4-O-(beta-D-glucopyranosido)-beta-D-glucopyranoside	Corynebacterium sp.	-	-
+1.1.1.47	9.8	beta-D-glucose	Priestia megaterium	30	8.0
+1.1.1.47	9.8	D-glucose	Priestia megaterium	37	8.0
+1.1.1.47	10	beta-D-glucose	Thermoplasma acidophilum	55	7.0
+1.1.1.47	10	beta-D-glucose	Priestia megaterium	-	-
+1.1.1.47	10.24	1-benzyl-3-carbamoylpyridin-1-ium chloride	Saccharolobus solfataricus	-	-
+1.1.1.47	10.29	1-(3-phenylpropyl)-1,4-dihydropyridine-3-carboxamide	Saccharolobus solfataricus	-	-
+1.1.1.47	11	4-O-(beta-D-glucopyranosido)-beta-D-glucopyranoside	Corynebacterium sp.	-	-
+1.1.1.47	11	beta-D-glucose	Priestia megaterium	-	-
+1.1.1.47	11	cellobiose	Corynebacterium sp.	-	9.8
+1.1.1.47	11	D-glucose	Priestia megaterium	37	6.0
+1.1.1.47	11.32	1-(3-phenylpropyl)-1,4-dihydropyridine-3-carboxamide	Saccharolobus solfataricus	-	-
+1.1.1.47	11.57	1-(3-phenylpropyl)-1,4-dihydropyridine-3-carboxamide	Saccharolobus solfataricus	-	-
+1.1.1.47	11.84	1-phenethyl-1,4-dihydropyridine-3-carboxamide	Saccharolobus solfataricus	-	-
+1.1.1.47	12	D-glucose	Priestia megaterium	37	8.0
+1.1.1.47	12.4	beta-D-glucose	Priestia megaterium	30	8.0
+1.1.1.47	12.76	1-(3-phenylpropyl)-1,4-dihydropyridine-3-carboxamide	Saccharolobus solfataricus	-	-
+1.1.1.47	13	beta-D-glucose	Priestia megaterium	-	-
+1.1.1.47	13.02	1-benzyl-3-carbamoylpyridin-1-ium chloride	Saccharolobus solfataricus	-	-
+1.1.1.47	13.15	1-benzyl-3-carbamoylpyridin-1-ium chloride	Saccharolobus solfataricus	-	-
+1.1.1.47	13.87	1-phenethyl-1,4-dihydropyridine-3-carboxamide	Saccharolobus solfataricus	-	-
+1.1.1.47	14	beta-D-glucose	Nostoc sp.	-	7.5
+1.1.1.47	14	beta-D-glucose	Priestia megaterium	25	8.0
+1.1.1.47	14	D-glucose	Priestia megaterium	25	8.0
+1.1.1.47	14.78	1-benzyl-3-carbamoylpyridin-1-ium chloride	Saccharolobus solfataricus	-	-
+1.1.1.47	14.8	D-glucose	Priestia megaterium	30	7.0
+1.1.1.47	15	beta-D-glucose	Nostoc sp.	-	7.5
+1.1.1.47	15.26	1-phenethyl-1,4-dihydropyridine-3-carboxamide	Saccharolobus solfataricus	-	-
+1.1.1.47	16	beta-D-glucose	Priestia megaterium	-	-
+1.1.1.47	16	D-glucose	Priestia megaterium	30	7.0
+1.1.1.47	16.33	1-phenethyl-1,4-dihydropyridine-3-carboxamide	Saccharolobus solfataricus	-	-
+1.1.1.47	16.4	D-glucose	Priestia megaterium	30	7.0
+1.1.1.47	17.126	D-glucose	Bacillus sp. (in: Bacteria)	25	8.0
+1.1.1.47	17.2	D-glucose	Priestia megaterium	30	7.0
+1.1.1.47	17.3	D-glucose	Priestia megaterium	30	7.0
+1.1.1.47	17.4	D-glucose	Priestia megaterium	30	7.0
+1.1.1.47	17.5	D-glucose	Priestia megaterium	30	7.0
+1.1.1.47	18	beta-D-glucose	Priestia megaterium	-	-
+1.1.1.47	18.9	NADP+	Priestia megaterium	30	8.0
+1.1.1.47	20	beta-D-glucose	Oncorhynchus mykiss	25	10
+1.1.1.47	20.4	D-xylose	Saccharolobus solfataricus	-	-
+1.1.1.47	22	beta-D-galactose	Saccharolobus solfataricus	70	9.0
+1.1.1.47	24.8	beta-D-glucose	Saccharolobus solfataricus	-	-
+1.1.1.47	25	2-deoxy-D-glucose 6-phosphate	Oncorhynchus mykiss	25	10
+1.1.1.47	29.2	D-xylose	Saccharolobus solfataricus	-	-
+1.1.1.47	30	NAD+	Oncorhynchus mykiss	-	-
+1.1.1.47	33.3	beta-D-glucose	Saccharolobus solfataricus	-	-
+1.1.1.47	35	D-glucosamine	Bacillus subtilis	-	6.5
+1.1.1.47	40	beta-D-glucose	Oncorhynchus mykiss	25	10
+1.1.1.47	42.9	beta-D-glucose	Bacillus subtilis	30	7.8
+1.1.1.47	44	beta-D-glucose	Priestia megaterium	30	8.0
+1.1.1.47	47.22	beta-D-glucose	Bos taurus	30	9.5
+1.1.1.47	47.5	beta-D-glucose	Priestia megaterium	25	9.0
+1.1.1.47	47.8	2-deoxy-beta-D-glucose	Bacillus subtilis	23	7.8
+1.1.1.47	48	NAD+	Bos taurus	-	-
+1.1.1.47	51	D-glucose	Corynebacterium sp.	-	-
+1.1.1.47	51	D-glucose	Corynebacterium sp.	-	9.8
+1.1.1.47	55	beta-D-glucose	Priestia megaterium	253C	-
+1.1.1.47	55.9	beta-D-glucose	Bacillus subtilis	30	7.8
+1.1.1.47	59	beta-D-glucose	Corynebacterium sp.	-	-
+1.1.1.47	59	beta-D-glucose	Saccharolobus solfataricus	-	-
+1.1.1.47	63	D-glucose	Priestia megaterium	37	8.0
+1.1.1.47	63	NADP+	Bos taurus	-	-
+1.1.1.47	65.8	D-xylose	Saccharolobus solfataricus	-	-
+1.1.1.47	68	beta-D-xylose	Saccharolobus solfataricus	70	9.0
+1.1.1.47	70	beta-D-glucose	Sus scrofa	30	9.9
+1.1.1.47	70	D-xylose	Oncorhynchus mykiss	25	10
+1.1.1.47	72.5	beta-D-glucose	Saccharolobus solfataricus	-	-
+1.1.1.47	76.3	D-xylose	Saccharolobus solfataricus	-	-
+1.1.1.47	80	D-glucose	Oncorhynchus mykiss	25	7.5
+1.1.1.47	80	D-glucose	Oncorhynchus mykiss	25	7.5
+1.1.1.47	80	D-xylose	Oncorhynchus mykiss	25	7.5
+1.1.1.47	81	D-glucose	Priestia megaterium	37	6.0
+1.1.1.47	85	beta-D-glucose	Priestia megaterium	253C	-
+1.1.1.47	100	D-xylose	Oncorhynchus mykiss	25	7.5
+1.1.1.47	105	NADP+	Oncorhynchus mykiss	-	-
+1.1.1.47	109	beta-D-galactose	Saccharolobus solfataricus	-	-
+1.1.1.47	118	beta-D-galactose	Saccharolobus solfataricus	-	-
+1.1.1.47	125	D-xylose	Corynebacterium sp.	-	-
+1.1.1.47	125	D-xylose	Corynebacterium sp.	-	9.8
+1.1.1.47	135	beta-D-glucose	Priestia megaterium	30	8.0
+1.1.1.47	148	D-xylose	Corynebacterium sp.	-	-
+1.1.1.47	175	beta-D-galactose	Saccharolobus solfataricus	-	-
+1.1.1.47	200	D-xylose	Oncorhynchus mykiss	25	7.5
+1.1.1.47	204	beta-D-galactose	Saccharolobus solfataricus	-	-
+1.1.1.47	380	D-glucose	Priestia megaterium	37	8.0
+1.1.1.47	800	D-galactose	Oncorhynchus mykiss	25	7.5
+1.1.1.47	1000	D-galactose	Oncorhynchus mykiss	25	10
+1.1.1.47	1100	D-glucose	Priestia megaterium	37	6.0
+1.1.1.47	1400	D-glucose	Priestia megaterium	37	6.0
+1.1.1.47	2000	D-glucose	Priestia megaterium	37	8.0
+1.1.1.47	2000	D-glucose	Priestia megaterium	37	8.0
+1.1.1.47	4000	D-galactose	Oncorhynchus mykiss	25	10
+1.1.1.47	4000	D-glucose	Priestia megaterium	37	6.0
+1.1.1.47	4000	D-glucose	Priestia megaterium	37	8.0
+1.1.1.47	5000	D-glucose	Priestia megaterium	37	8.0
+1.1.1.47	10000	D-galactose	Oncorhynchus mykiss	25	7.5
