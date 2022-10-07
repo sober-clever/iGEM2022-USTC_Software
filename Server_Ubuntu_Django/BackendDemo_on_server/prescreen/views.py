@@ -266,24 +266,56 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-def fun(ec, sub, ogsm, temp, ph):
+def fun(ec, sub, ogsm, temp, ph, cofactor):
 
-    KmQueryset1 = Km.objects.filter(ec_num=ec).filter(substrate=sub).filter(speciesname=ogsm).filter(temp=temp).filter(ph=ph)
-    Kcat_KmQueryset1 = Kcat_Km.objects.filter(ec_num=ec).filter(substrate=sub).filter(speciesname=ogsm).filter(temp=temp).filter(ph=ph)
-    KmQueryset2 = Km.objects.filter(ec_num="1.1.1.47").filter(substrate=sub).filter(speciesname=ogsm).filter(temp=temp).filter(ph=ph)
-    Kcat_KmQueryset2 = Kcat_Km.objects.filter(ec_num="1.1.1.47").filter(substrate=sub).filter(speciesname=ogsm).filter(temp=temp).filter(ph=ph)
+    if cofactor == "NADH":
+        sub2 = "NAD+"
+    elif cofactor == "NADPH":
+        sub2 = "NADP+"
+
+    KmQueryset1 = Km.objects.filter(ec_num=ec).filter(substrate=sub). \
+        filter(speciesname=ogsm)
+
+    Kcat_KmQueryset1 = Kcat_Km.objects.filter(ec_num=ec).filter(substrate=sub). \
+        filter(speciesname=ogsm)
+
+    KmQueryset2 = Km.objects.filter(ec_num="1.1.1.47").filter(substrate=sub2). \
+        filter(speciesname=ogsm)
+
+    Kcat_KmQueryset2 = Kcat_Km.objects.filter(ec_num="1.1.1.47").filter(substrate=sub2). \
+        filter(speciesname=ogsm)
+
+    if temp != "":
+        temp = float(temp)
+        temp_low = temp - 10
+        temp_high = temp + 10
+        KmQueryset1 = KmQueryset1.filter(temp__range=(temp_low, temp_high))
+        Kcat_KmQueryset1 = Kcat_KmQueryset1.filter(temp__range=(temp_low, temp_high))
+        KmQueryset2 = KmQueryset2.filter(temp__range=(temp_low, temp_high))
+        Kcat_KmQueryset2 = Kcat_KmQueryset2.filter(temp__range=(temp_low, temp_high))
+
+    if ph != "":
+        ph = float(ph)
+        ph_low = ph - 2
+        ph_high = ph + 2
+        KmQueryset1 = KmQueryset1.filter(ph__range=(ph_low, ph_high))
+        Kcat_KmQueryset1 = Kcat_KmQueryset1.filter(ph__range=(ph_low, ph_high))
+        KmQueryset2 = KmQueryset2.filter(ph__range=(ph_low, ph_high))
+        Kcat_KmQueryset2 = Kcat_KmQueryset2.filter(ph__range=(ph_low, ph_high))
+
+
     km_min1, km_max1 = 1e5, 0
     kcatkm_min1, kcatkm_max1 = 1e5, 0
     km_min2, km_max2 = 1e5, 0
     kcatkm_min2, kcatkm_max2 = 1e5, 0
     for km in KmQueryset1:
-        km_min1, km_max1 = min(km_min1, km), max(km_max1, km)
+        km_min1, km_max1 = min(km_min1, km.km), max(km_max1, km.km)
     for kcatkm in Kcat_KmQueryset1:
-        kcatkm_min1, kcatkm_max1 = min(kcatkm_min1, kcatkm), max(kcatkm_max1, kcatkm)
+        kcatkm_min1, kcatkm_max1 = min(kcatkm_min1, kcatkm.kcat_km), max(kcatkm_max1, kcatkm.kcat_km)
     for km in KmQueryset2:
-        km_min2, km_max2 = min(km_min2, km), max(km_max2, km)
+        km_min2, km_max2 = min(km_min2, km.km), max(km_max2, km.km)
     for kcatkm in Kcat_KmQueryset2:
-        kcatkm_min2, kcatkm_max2 = min(kcatkm_min2, kcatkm), max(kcatkm_max2, kcatkm)
+        kcatkm_min2, kcatkm_max2 = min(kcatkm_min2, kcatkm.kcat_km), max(kcatkm_max2, kcatkm.kcat_km)
     # 返回的两个值可能相等，表示只有一个值，无需区间表示
     return (km_min1, km_max1), (kcatkm_min1, kcatkm_max1), (km_min2, km_max2), (kcatkm_min2, kcatkm_max2)
 
@@ -299,12 +331,14 @@ def sencond_query(request):
         serializer = Query2Serializer(data=request.data)
         if serializer.is_valid():
             dic = request.data
-            ph = float(dic['ph'])
-            temp = float(dic['temp'])
+            # ph 和 temp 可能为空串
+            ph = dic['ph']
+            temp = dic['temp']
             substrate_info = dic['substrate_info']
             ec_num = dic['ec_num']
             organism = dic['organism']
-            km1_range, kcat1_range, km2_range, kcat2_range = fun(ec_num, substrate_info, organism, temp, ph)
+            cofactor = dic['cofactor2']
+            km1_range, kcat1_range, km2_range, kcat2_range = fun(ec_num, substrate_info, organism, temp, ph, cofactor)
             dic_ = {}
             dic_['km1_range'] = km1_range
             dic_['kcat1_range'] = kcat1_range
