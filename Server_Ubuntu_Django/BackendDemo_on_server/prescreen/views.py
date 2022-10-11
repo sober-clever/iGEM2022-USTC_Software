@@ -84,12 +84,7 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                 elif dic["type"] == 6:
                     ChoiceQueryset = Ligation.objects.all()
                 else:
-                    ChoiceQueryset = Redox.objects.all() 
-                    FirstQueryset = FirstQueryset.union(Elimination.objects.all())
-                    FirstQueryset = FirstQueryset.union(Decarboxylation.objects.all())
-                    FirstQueryset = FirstQueryset.union(Transfer.objects.all())
-                    FirstQueryset = FirstQueryset.union(Hydrolysis.objects.all())
-                    FirstQueryset = FirstQueryset.union(Others.objects.all())
+                    ChoiceQueryset = Reaction.objects.all() 
 
                 FirstQueryset = FirstQueryset.union(ChoiceQueryset)
                 
