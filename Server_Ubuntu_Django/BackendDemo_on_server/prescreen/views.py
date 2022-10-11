@@ -81,15 +81,18 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                 elif dic["type"] == 5:
                     ChoiceQueryset = Ismerization.objects.all()
                     from django.db import connection
-                else:
+                elif dic["type"] == 6:
                     ChoiceQueryset = Ligation.objects.all()
-                FirstQueryset = FirstQueryset.union(ChoiceQueryset)
-                # FirstQueryset = FirstQueryset.union(Elimination.objects.all())
-                # FirstQueryset = FirstQueryset.union(Decarboxylation.objects.all())
-                # FirstQueryset = FirstQueryset.union(Transfer.objects.all())
-                # FirstQueryset = FirstQueryset.union(Hydrolysis.objects.all())
-                # FirstQueryset = FirstQueryset.union(Others.objects.all())
+                else:
+                    ChoiceQueryset = Redox.objects.all() 
+                    FirstQueryset = FirstQueryset.union(Elimination.objects.all())
+                    FirstQueryset = FirstQueryset.union(Decarboxylation.objects.all())
+                    FirstQueryset = FirstQueryset.union(Transfer.objects.all())
+                    FirstQueryset = FirstQueryset.union(Hydrolysis.objects.all())
+                    FirstQueryset = FirstQueryset.union(Others.objects.all())
 
+                FirstQueryset = FirstQueryset.union(ChoiceQueryset)
+                
                 FirstList = []
                 for i in FirstQueryset:
                     FirstList.append(i.ec_num)
