@@ -15,7 +15,83 @@ to be continued
 
 ## Installation
 
-to be continued
+### Web Server
+
+#### OS
+
+- Ubuntu 20.04
+
+#### Python
+
+Python packages required:
+
+- Python version 3.8.10
+- Django == 4.1
+- djangorestframework == 3.14.0
+- PyMySQL == 1.0.2
+- ray == 1.11.0
+- rdkit == 2022.3.4
+- rpyc == 5.1.0
+- django-cors-headers == 3.13.0
+
+#### MySQL
+
+#### Nginx
+
+Install nginx:
+
+```shell
+sudo apt install nginx
+```
+
+Enter nginx directory:
+
+```shell
+cd /etc/nginx
+```
+
+The `nginx.conf` and `uwsgi.ini` is in the `nginx` directory.
+
+Copy the `nginx.conf` and `uwsgi.ini` into the directory.(You need to change the path of the backend   project in `uwsgi,ini` to the actual path of the backend project on your server)
+
+Run the command:
+
+```shell
+uwsgi --ini uwsgi.ini	
+```
+
+Then:
+
+```shell
+sudo systemctl start nginx
+```
+
+### Calculation Server
+
+#### OS
+
+- Ubuntu 20.04
+
+#### Python
+
+Python packages required:
+
+- Python version 3.8.10
+- rpyc == 5.2.3
+- rpy2 == 3.5.4
+- ray == 2.0.0
+
+#### R
+
+R packages required:
+
+- R version 3.6.3
+- rJava
+- RxnSim
+
+#### Java
+
+openjdk version "1.8.0_342"
 
 ## Usage
 
@@ -128,4 +204,20 @@ to be continnued
 
 ## Authors and acknowledgment
 
-Show your appreciation to those who have contributed to the project.
+Brenda, which provides us plenty of data.
+
+RxnSim, which enables us to compute reaction similarity.
+
+Ray, which helps us speed up software.
+
+The Western Library of USTC, who gives us one year’s access to Room 214, where we get accomplished most of our work.
+
+Anhui Lianchuang Biological Medicine Co.,Ltd, who showed us around the company and made a lot of practical suggestions.
+
+The University of Science and Technology of China Initiative Foundation, which had been giving us sponsorship and firm support all these years.
+
+The School of Life Sciences, USTC, for their academic support and inspiring advice on our project.
+
+The University of Science and Technology of China Education Foundation, for their selfless financial help.
+
+The frontend and backend group of USTC-Software, who mainly built the software.
