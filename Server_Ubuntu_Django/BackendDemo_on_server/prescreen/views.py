@@ -70,24 +70,28 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
             MustQueryset = Mustcontain.objects.all()
             FirstQueryset = MustQueryset
             if dic["type"]:  # if-else 懒得写
-                if dic["type"] == 1:
+                if dic["type"] == "1":
                     ChoiceQueryset = Redox.objects.all()
-                elif dic["type"] == 2:
+                    FirstQueryset = FirstQueryset.union(ChoiceQueryset)
+                elif dic["type"] == "2":
                     ChoiceQueryset = Transfer.objects.all()
-                elif dic["type"] == 3:
+                    FirstQueryset = FirstQueryset.union(ChoiceQueryset)
+                elif dic["type"] == "3":
                     ChoiceQueryset = Hydrolysis.objects.all()
-                elif dic["type"] == 4:
+                    FirstQueryset = FirstQueryset.union(ChoiceQueryset)
+                elif dic["type"] == "4":
                     ChoiceQueryset = Elimination.objects.all()
-                elif dic["type"] == 5:
+                    FirstQueryset = FirstQueryset.union(ChoiceQueryset)
+                elif dic["type"] == "5":
                     ChoiceQueryset = Ismerization.objects.all()
+                    FirstQueryset = FirstQueryset.union(ChoiceQueryset)
                     from django.db import connection
-                elif dic["type"] == 6:
+                elif dic["type"] == "6":
                     ChoiceQueryset = Ligation.objects.all()
+                    FirstQueryset = FirstQueryset.union(ChoiceQueryset)
                 else:
                     ChoiceQueryset = Reaction.objects.all() 
 
-                FirstQueryset = FirstQueryset.union(ChoiceQueryset)
-                
                 FirstList = []
                 for i in FirstQueryset:
                     FirstList.append(i.ec_num)
