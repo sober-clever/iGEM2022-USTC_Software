@@ -90,7 +90,7 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                     ChoiceQueryset = Ligation.objects.all()
                     FirstQueryset = FirstQueryset.union(ChoiceQueryset)
                 else:
-                    ChoiceQueryset = Reaction.objects.all() 
+                    FirstQueryset = Reaction.objects.all()
 
                 FirstList = []
                 for i in FirstQueryset:
