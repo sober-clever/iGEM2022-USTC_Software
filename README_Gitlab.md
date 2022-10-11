@@ -1,17 +1,8 @@
 # Team USTC-Software 2022 Software Tool
 
-If you team competes in the [**Software & AI** track](https://competition.igem.org/participation/tracks) or wants to
-apply for the [**Best Software Tool** Award](https://competition.igem.org/judging/awards), you **MUST** host all the
-code of your team's software tool in this repository, `main` branch. By the **Wiki Freeze**, a
-[release](https://docs.gitlab.com/ee/user/project/releases/) will be automatically created as the judging artifact of
-this software tool. You will be able to keep working on your software after the Grand Jamboree.
-
-> If your team does not have any software tool, you can totally ignore this repository. If left unchanged, this
-> repository will be automatically deleted by the end of the season.
-
 ## Description
 
-to be continued
+This project receives the reactant and generation structure, and the specified group, by preliminarily screening the enzymes of the substrate and generation containing the corresponding group in the database, and then comparing the enzyme-catalyzed reaction with the reactions given by the user to find the enzymes that can catalyze the reaction given by the user or have catalytic potential, and output it in a user-friendly form.
 
 ## Installation
 
@@ -57,7 +48,7 @@ Copy the `nginx.conf` and `uwsgi.ini` into the directory.(You need to change the
 Run the command:
 
 ```shell
-uwsgi --ini uwsgi.ini	
+uwsgi --ini uwsgi.ini    
 ```
 
 Then:
