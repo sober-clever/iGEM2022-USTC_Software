@@ -1,0 +1,370 @@
+:root{
+	--subpageImgWidth:0px;
+}
+
+@font-face {
+	font-family: bottom-size;
+	src: url("../Font/Corbel.ttf");
+}
+
+@font-face {
+    font-family: summary;
+    src: url("../Font/CenturyGothic.TTF");
+}
+
+  .main-body{
+    padding: 0;
+  }
+
+  a{
+    color:black;
+    text-decoration: none;
+	transition: 0.3s;
+  }
+  a:hover{
+	transition: 0.3s;
+  }
+  /* 进度条的css */
+	.left-menu{
+    transform: translateX(20%);
+  }
+
+  .progress{
+    left: 10%;
+    transform: translateX(-50%);
+    position: absolute;
+    height: inherit;
+  }
+
+  .progress.active{
+    height: 0%;
+    width: 5px;
+    background-color:#4598B5;
+  }
+
+  .progress.inactive{
+    width: 3px;
+    background-color:#B7D0D0;
+  }
+
+  
+  /* footer的css */
+  .footer{
+	border-bottom: 2px solid #777;
+  }
+
+  .footer-title{
+	font-family: summary;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 25px;
+	font-weight: 800;
+    color:black;
+  }
+  .footer-list{
+	font-family: bottom-size;
+	padding-top: 7px;
+    font-size:16px;
+    text-align: center;
+  }
+
+  #footer-logo{
+	width: 40%;
+  }
+
+  @keyframes logo-anime{
+	0% {transform: scale(1);}
+	50% {transform: scale(1.1);}
+	100% {transform: scale(1);}
+  }
+
+  .team-footer{
+	opacity: 0;
+	transition: 0.5s ease-in-out;
+  }
+
+  .logo-container a:hover{
+	animation: logo-anime 0.5s ease-in-out;
+  }
+
+  .logo-container a:hover .team-footer{
+	opacity: 1;
+	height: 100%;
+	transition: 0.5s ease-in-out;
+  }
+  .footer-required{
+    padding-top: 10px;
+	font-family: bottom-size;
+	font-size: larger;
+  }
+
+  .wiki-tools{
+    height: 50px;
+    margin: 10px 0;
+  }
+
+  .wiki-tools *{
+	font-family: summary;
+  }
+  .tool-anchor:hover{
+    color: #FFF;
+  }
+
+  .tool-anchor{
+    text-align:center;
+  }
+
+  .scrollmagic-pin-spacer{
+    padding: 0;
+  }
+
+  .row{
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+
+  .intro{
+    height: 100px;
+  }
+	
+	.part{
+		background-color:transparent;
+	}
+	
+  .part .h4{
+	font-family: summary;
+	font-weight: 800;
+  }
+
+  .part-circ{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: #EEEEEA;
+    border: 4px solid #B6D1DA;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    left:10%;
+    transition:0.5s;
+  }
+
+  .part-circ:hover,.part-circ.active:hover,.part-circ.activated:hover{
+    background-color: #B6D1DA;
+  }
+
+  .part-circ.active{
+    border: 5px solid #4598B5;
+    background-color:#11505F;
+    width: 21px;
+    height: 21px;
+    transition:0.5s;
+  }
+
+  .part-circ.activated{
+    border: 5px solid #4598B5;
+    background-color:#93CDDb;
+    width: 21px;
+    height: 21px;
+    transition:0.5s;
+  }
+	
+  .part-theme{
+   display: inline-block;
+   	width: 10rem;
+     transform: translateX(20px);
+     font-size: large;
+   font-family: summary;
+   font-weight: 800;
+  }
+
+	#nav{
+	    padding:0!important;
+			/* z-index: 10;
+			position: absolute; */
+	}
+	.row{
+	    margin: 0 !important;
+	}
+	.navbar{
+		background-color:black !important;
+		color:white;
+	}
+	.nav-link{
+		color:white;
+		padding: 0;
+	}
+	
+	.dropdown.nav-item{
+	    transition: 0.4s ease;
+	}
+	.dropdown.nav-item .dropdown-menu{
+	    transform: translateX(-15%);
+	}
+	
+	
+	.dropdown.nav-item .dropdown-menu,.dropdown.nav-item .dropdown-item{
+	    display: flex;
+	    flex-direction: column;
+	    opacity: 0;
+	    transition: 0.4s ease;
+	}
+	
+	.dropdown.nav-item .dropdown-item{
+	    height:0;
+	    justify-content:center;
+	}
+	
+	.dropdown.nav-item:hover .dropdown-menu,.dropdown-menu:hover{
+	    opacity: 1;
+	}
+	
+	.dropdown.nav-item:hover .dropdown-item,.dropdown-item:hover{
+	    opacity: 1;
+	    height: 36px;
+	}
+	
+	.dropdown.nav-item:hover{
+	    border-bottom: 2px solid #fff;
+	}
+	
+	.dropdown.nav-item .dropdown-toggle::after{
+	    transition: 0.3s ease;
+	    transform: rotateZ(0deg);
+	}
+	
+	.dropdown.nav-item:hover .dropdown-toggle::after{
+	    transform: rotateZ(180deg);
+	}
+	
+	.nav-link{
+	    font-size: 18px;
+	}
+	
+	.cir-nav{
+	    position: fixed;
+	    right: 20px;
+	    top: 20px;
+	    opacity: 0;
+	    transform: translateX(20px);
+	}
+	.cir-nav:hover{
+	    opacity: 0.2;
+	}
+	
+	.subpage-img{
+		/* background-image: url(../img/collaboration.jpg);
+		background-size: cover; */
+		box-shadow: 0.8rem 0.8rem 1rem 0.2rem rgba(0.1, 0.1,0.1,0.5);
+		/* text-align: center; */
+		/* filter: brightness(50%); */
+	}
+	
+	
+	.subpage-title{
+		text-align: center;
+		font-size: 6vw;
+		font-weight: 800;
+		color: #ffffff;
+		filter: brightness(100%);
+		word-break: keep-all;
+		white-space: nowrap;
+		width: 100%;
+	}
+	
+	#enter{
+		/* background-color: transparent; */
+    height: 100vh;
+		background-image: linear-gradient(rgba(131,189,203,1) , rgba(184,229,229,1) );
+		
+	}
+	
+	#full-body{
+		background-image: linear-gradient(to bottom, rgba(131,189,203,1) ,rgba(195,237,235,1),rgba(195,237,235,0.5), rgba(195,237,235,0.5) , rgba(131,189,203,0.9) );
+		/* background-image: linear-gradient(#50565e 10%, #83bdcb 20% , #93cddb 70%); */
+	}
+	
+	.part p{
+	
+			/* text-indent: 2rem; */
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+			margin-left: 3rem;
+			margin-right: 3rem;
+			font-size: 1.25rem;
+			font-family: bottom-size;
+			
+		}
+		
+		.part .subh{
+			font-size: 2rem;
+			font-family: summary;
+			font-weight: bold;
+			margin: 3rem;
+		}
+		
+		.part .ssh{
+			font-family: summary;
+			font-weight: bold;
+			margin-left: 3rem;
+			font-size: 1.7rem;
+		}
+		
+		.part .sssh{
+			font-family: summary;
+			font-weight: bold;
+			margin-left: 3rem;
+			font-size: 1.4rem;
+		}
+		
+		
+		.part img{
+			padding-left: 5rem;
+			padding-right: 5rem;
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+			width: 100%;
+			text-indent: 2rem;
+			margin: 2rem;
+			font-family: bottom-size;
+			font-size: 1.2rem;
+
+		}
+		
+		.part{
+			padding: 1rem;
+			margin: 2rem;
+			border-style: solid;
+			border-radius: 2.5rem;
+			border-width: 10px;
+			border-color: rgba(131,189,203,0.3);
+			/* background-color: #11505F; */
+		}
+
+		.feedback{
+			background-size: cover;
+			background-image: url(https://static.igem.wiki/teams/4240/wiki/img/sticky-note.png);
+			background-position:50% 50%;
+		}
+
+		.feedback p{
+			text-decoration: underline;
+		}
+
+		.feedback p:first-child{
+			padding-left: 7rem;
+		}
+
+		.content-description{
+			color:#555;
+			text-align:center;
+			font-size: smaller;
+		}
+
+.headtitle{
+	font-size: 2.5rem;
+	font-family: summary;
+	font-weight: bold;
+	margin: 3rem;
+	text-align: center;
+}

@@ -1,0 +1,239 @@
+@font-face {
+	font-family: TITLE;
+	src: url("../Font/Bauhaus\ 93.ttf");
+}
+
+body {
+	color:black;
+}
+
+.main-body {
+	padding: 0;
+	
+}
+
+a{
+	color:white;
+	text-decoration: none;
+}
+
+a:hover {
+	border-radius:3px;
+	font-weight: 800;
+}
+
+/* 修改nav导航条的css */
+.navbar{
+	background-color:black !important;
+	color:white;
+	transform: translateY(-200vh);
+}
+.nav-link{
+	color:white;
+	padding: 0;
+}
+.nav-link:hover,
+.nav-link:focus{
+	color:silver;
+	background-color:#808080;
+}
+.nav-item{
+    border-radius:3px;
+	background-color:#808080;
+}
+
+/* footer的css */
+.footer {
+	background-color:#008000;
+}
+
+.footer-title {
+	margin-top: 20px;
+	text-align: center;
+	font-size: 25px;
+	color: black;
+}
+
+.footer-list {
+	font-size: 16px;
+	text-align: center;
+}
+
+.footer-required {
+	padding-top: 10px;
+}
+
+.wiki-tools {
+	height: 50px;
+	margin: 10px 0;
+}
+
+.tool-anchor:hover {
+	color: #FFF;
+}
+
+.tool-anchor {
+	text-align: center;
+}
+
+.scrollmagic-pin-spacer {
+	padding: 0;
+}
+
+.row {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.our-logo {
+	background-color: #00f000;
+}
+
+.intro {
+	height: 100px;
+}
+
+
+
+
+#top {
+	display: block;
+	height: 100vh;
+	/* background-image: url(../img/firstImg.png); */
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	/* background-attachment: fixed; */
+	color:green;
+}
+
+#down_button{
+	text-decoration: none;
+	text-align: center;
+}
+
+#down_button i{
+	transition: font-size 0.4s;
+	-webkit-transition: font-size 0.4s; /* Safari */
+	font-size: 3rem; 
+	color: #90c0c0; 
+	opacity: 0.5;
+}
+
+#down_button i:hover{
+	font-size: 4rem;
+	color: #50c0c0; 
+	opacity: 1.0;
+}
+
+ .bubble{
+	position: relative;
+	top: 100px;
+	left:100px;
+	width: 20px;
+	height: 20px;
+	background-color:#10c0f0;
+	border-radius: 50%;
+}
+
+#go-back{
+	position: fixed;
+	width: 0px;
+	height: 0px;
+	/* border: 2px solid #000; */
+	background-image:url(../img/IMG-IGEM.jpg);
+	background-repeat: no-repeat;
+	background-size:100%;
+	background-position: center;
+	border-radius: 50%;
+	bottom:100px;
+	right:100px;
+	transition: ease 0.2s;
+  }
+
+  #go-back.active{
+	width:110px;
+	height:110px;
+	transition: 0.2s;
+  }
+
+  #go-back:hover{
+	background-image: url(../img/IGEM.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
+	 transition: 0.5s; 
+	transform: rotateY(360deg);
+  }
+
+  .title{
+	text-align: center;
+	font-weight: bold;
+	font-size: 200px;
+	transform: translateY(-100vh);
+	margin: auto;
+	/* -webkit-text-stroke: 2px #FFF; */
+	text-shadow: 7px 7px 7px #FFF;
+	font-family: TITLE;
+  }
+
+  .sub-title{
+	font-size: 28px;
+	filter: blur(10px);
+	transform: scaleX(120%);
+  }
+
+  .sub-title.active{
+	filter: blur(0);
+	transform: scaleX(100%);
+	transition: 0.25s;
+  }
+
+  #path6 {
+	stroke: red;
+	stroke-dasharray: 100% 100%;
+	stroke-dashoffset: 100%;
+	stroke-width: 5
+}
+
+#path7 {
+	stroke: #9C27B0;
+	stroke-dasharray: 100% 100%;
+	stroke-dashoffset: 100%;
+	stroke-width: 5
+}
+
+#Ea{
+	/* background-image: url("../img/Ea-axis.svg");  */
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+.new-p{
+	margin-top: 60vh;
+}
+.new-b{
+	padding-top:30vh ;
+}
+.cls-1 {
+	fill: none;
+	stroke: #030000;
+	stroke-linecap: round;
+	stroke-width: 12px;
+	fill-rule: evenodd;
+  }
+
+  .cls-2 {
+	font-size: 36px;
+	text-anchor: middle;
+	font-family: "Comic Sans MS";
+  }
+  .mesh-ball{
+	position: relative;
+	/* top: 100px;
+	left:100px; */
+	width: 15px;
+	height: 15px;
+	background-color:#80f0a0;
+	border-radius: 50%;
+}

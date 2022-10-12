@@ -1,0 +1,121 @@
+{
+    "1.1.1.1": {
+      "similarity": 0.18452380952380953,
+      "most_similar_reaction": "OC1CCN(Cc2ccccc2)C1>>O=C1CCN(Cc2ccccc2)C1",
+      "cofactor": "NADH",
+      "link": [
+        "https://www.brenda-enzymes.org/enzyme.php?ecno=1.1.1.1",
+        "https://www.uniprot.org/uniprotkb?query=ec%3A1.1.1.1",
+        "https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22type%22%3A%22group%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22group%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22group%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22full_text%22%2C%22parameters%22%3A%7B%22value%22%3A%22ec%3A1.1.1.1%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%7D%5D%2C%22logical_operator%22%3A%22and%22%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%2C%22scoring_strategy%22%3A%22combined%22%7D%2C%22request_info%22%3A%7B%22query_id%22%3A%22b5d9444b2ee38f138a33593d9e94a0b7%22%7D%7Dec",
+        "https://pubmed.ncbi.nlm.nih.gov/?term=ec%3A1.1.1.1"
+      ],
+      "name": "alcohol dehydrogenase",
+      "kinetic": [],
+      "substrate_info": []
+    },
+    "1.3.1.12": {
+      "similarity": 0.17534965034965033,
+      "most_similar_reaction": "N[C@@H](CC1(C(=O)O)C=CC(O)C=C1)C(=O)O>>N[C@@H](Cc1ccc(O)cc1)C(=O)O",
+      "cofactor": "NADH",
+      "link": [
+        "https://www.brenda-enzymes.org/enzyme.php?ecno=1.3.1.12",
+        "https://www.uniprot.org/uniprotkb?query=ec%3A1.3.1.12",
+        "https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22type%22%3A%22group%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22group%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22group%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22full_text%22%2C%22parameters%22%3A%7B%22value%22%3A%22ec%3A1.3.1.12%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%7D%5D%2C%22logical_operator%22%3A%22and%22%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%2C%22scoring_strategy%22%3A%22combined%22%7D%2C%22request_info%22%3A%7B%22query_id%22%3A%22b5d9444b2ee38f138a33593d9e94a0b7%22%7D%7Dec",
+        "https://pubmed.ncbi.nlm.nih.gov/?term=ec%3A1.3.1.12"
+      ],
+      "name": "prephenate dehydrogenase",
+      "kinetic": [
+        [
+          "[7.5]",
+          "[]",
+          "https://www.brenda-enzymes.org/literature.php?e=1.3.1.12&r=655472"
+        ],
+        [
+          "[7.8]",
+          "[37]",
+          "https://www.brenda-enzymes.org/literature.php?e=1.3.1.12&r=654967"
+        ],
+        [
+          "[8.8]",
+          "[]",
+          "https://www.brenda-enzymes.org/literature.php?e=1.3.1.12&r=390539"
+        ],
+        [
+          "[]",
+          "[37]",
+          "https://www.brenda-enzymes.org/literature.php?e=1.3.1.12&r= 655472"
+        ]
+      ],
+      "substrate_info": []
+    },
+    "1.1.1.154": {
+      "similarity": 0.13736449864498645,
+      "most_similar_reaction": "NC(=O)NC(O)C(=O)O>>NC(=O)NC(=O)C(=O)O",
+      "cofactor": "NADH",
+      "link": [
+        "https://www.brenda-enzymes.org/enzyme.php?ecno=1.1.1.154",
+        "https://www.uniprot.org/uniprotkb?query=ec%3A1.1.1.154",
+        "https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22type%22%3A%22group%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22group%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22group%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22full_text%22%2C%22parameters%22%3A%7B%22value%22%3A%22ec%3A1.1.1.154%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%7D%5D%2C%22logical_operator%22%3A%22and%22%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%2C%22scoring_strategy%22%3A%22combined%22%7D%2C%22request_info%22%3A%7B%22query_id%22%3A%22b5d9444b2ee38f138a33593d9e94a0b7%22%7D%7Dec",
+        "https://pubmed.ncbi.nlm.nih.gov/?term=ec%3A1.1.1.154"
+      ],
+      "name": "ureidoglycolate dehydrogenase",
+      "kinetic": [
+        [
+          "[8.1]",
+          "[30]",
+          "https://www.brenda-enzymes.org/literature.php?e=1.1.1.154&r=726324"
+        ]
+      ],
+      "substrate_info": []
+    },
+    "1.1.1.350": {
+      "similarity": 0.13736449864498645,
+      "most_similar_reaction": "NC(=O)N[C@@H](O)C(=O)O>>NC(=O)NC(=O)C(=O)[O-]",
+      "cofactor": "NADH",
+      "link": [
+        "https://www.brenda-enzymes.org/enzyme.php?ecno=1.1.1.350",
+        "https://www.uniprot.org/uniprotkb?query=ec%3A1.1.1.350",
+        "https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22type%22%3A%22group%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22group%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22group%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22full_text%22%2C%22parameters%22%3A%7B%22value%22%3A%22ec%3A1.1.1.350%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%7D%5D%2C%22logical_operator%22%3A%22and%22%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%2C%22scoring_strategy%22%3A%22combined%22%7D%2C%22request_info%22%3A%7B%22query_id%22%3A%22b5d9444b2ee38f138a33593d9e94a0b7%22%7D%7Dec",
+        "https://pubmed.ncbi.nlm.nih.gov/?term=ec%3A1.1.1.350"
+      ],
+      "name": "ureidoglycolate dehydrogenase (NAD+)",
+      "kinetic": [],
+      "substrate_info": []
+    },
+    "1.1.1.75": {
+      "similarity": 0.12573099415204678,
+      "most_similar_reaction": "C[C@@H](O)CN>>CC(=O)CN",
+      "cofactor": "NADH",
+      "link": [
+        "https://www.brenda-enzymes.org/enzyme.php?ecno=1.1.1.75",
+        "https://www.uniprot.org/uniprotkb?query=ec%3A1.1.1.75",
+        "https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22type%22%3A%22group%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22group%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22group%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22full_text%22%2C%22parameters%22%3A%7B%22value%22%3A%22ec%3A1.1.1.75%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%7D%5D%2C%22logical_operator%22%3A%22and%22%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%2C%22scoring_strategy%22%3A%22combined%22%7D%2C%22request_info%22%3A%7B%22query_id%22%3A%22b5d9444b2ee38f138a33593d9e94a0b7%22%7D%7Dec",
+        "https://pubmed.ncbi.nlm.nih.gov/?term=ec%3A1.1.1.75"
+      ],
+      "name": "(R)-aminopropanol dehydrogenase",
+      "kinetic": [],
+      "substrate_info": []
+    },
+    "ecs": [
+      "1.1.1.1",
+      "1.3.1.12",
+      "1.1.1.154",
+      "1.1.1.350",
+      "1.1.1.75"
+    ],
+    "time": 1.9853150844573975,
+    "len": 31,
+    "rxnsim_time": [
+      0.6030945777893066,
+      0.5517265796661377,
+      0.5644898414611816,
+      0.6116623878479004,
+      0.5672688484191895,
+      0.5727274417877197,
+      0.6010763645172119,
+      0.6856954097747803
+    ],
+    "primary_selection_time": 1.018092393875122,
+    "compare_time": 3.1324470043182373,
+    "compare_len": 31
+  }

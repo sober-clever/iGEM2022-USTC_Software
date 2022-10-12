@@ -1,0 +1,149 @@
+body{
+    height: auto;
+      background-color: beige;
+  } 
+
+  .main-body{
+    padding: 0;
+  }
+
+  a{
+    color:black;
+    text-decoration: none;
+  }
+  a:hover{
+    font-weight: 800;
+  }
+  /* 进度条的css */
+  .left-menu{
+    background-color:blanchedalmond;
+  }
+
+  .progress{
+    left: 10%;
+    transform: translateX(-50%);
+    position: absolute;
+    height: inherit;
+  }
+
+  .progress.active{
+    height: 0%;
+    width: 5px;
+    background-color:#7777FF;
+  }
+
+  .progress.inactive{
+    width: 3px;
+    background-color:#77FFFF;
+  }
+
+  /* 返回顶部 */
+  #go-top{
+    background-color: cadetblue;
+    display: none;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom:25px;
+    right: 25px;   
+    text-align: center;
+    line-height: 50px;
+    color:black;
+  }
+  /* 修改nav导航条的css */
+  .navbar{
+      background-color:powderblue!important;
+  }
+  /* footer的css */
+  .footer{
+    background-color: lightcyan;
+  }
+  .footer-title{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 25px;
+    color:black;
+  }
+  .footer-list{
+    font-size:16px;
+    text-align: center;
+  }
+  .footer-required{
+    padding-top: 10px;
+  }
+  .wiki-tools{
+    height: 50px;
+    margin: 10px 0;
+  }
+
+  .tool-anchor:hover{
+    color: #FFF;
+  }
+
+  .tool-anchor{
+    text-align:center;
+  }
+
+  .scrollmagic-pin-spacer{
+    padding: 0;
+  }
+
+  .row{
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .our-logo{
+    background-color: #bfa;
+  }
+
+  .intro{
+    height: 100px;
+  }
+  #part01{
+    height: 500px;
+    background-color:#FF7777;
+  }
+
+  #part02{
+    height: 700px;
+    background-color:#FFFF77;
+  }
+
+  #part03{
+    height: 300px;
+    background-color:#77FF77;
+  }
+
+  #part04{
+    height: 900px;
+    background-color: #7777FF;
+  }
+
+  .part-circ{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: blanchedalmond;
+    border: 4px solid #77FFFF;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    left:10%;
+    transition:0.5s;
+  }
+
+  .part-circ.active{
+    border: 6px solid #7777FF;
+    background-color:lightpink;
+    width: 21px;
+    height: 21px;
+    transition:0.5s;
+  }
+
+  .part-circ.activated{
+    border: 6px solid #7777FF;
+    background-color: blanchedalmond;
+    width: 21px;
+    height: 21px;
+    transition:0.5s;
+  }
