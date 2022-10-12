@@ -135,6 +135,24 @@ The back-end web framework we uesd is Django. Django makes it easier to build be
 
 ​        Our preliminary software were quite weak and only supported one client online at the same time. To improve concurrency, we used uwsgi and modified the execution logic of ray so that we could support more clients visiting our sites simultaneously.
 
+## Reference
+
+1. Varun Giri, Tadi Venkata Sivakumar, Kwang Myung Cho, Tae Yong Kim, Anirban Bhaduri, RxnSim: a tool to compare biochemical reactions, *Bioinformatics*, Volume 31, Issue 22, 15 November 2015, Pages 3712–3714, https://doi.org/10.1093/bioinformatics/btv416
+
+2. Moritz, Philipp et al. “Ray: A Distributed Framework for Emerging AI Applications.”**[arXiv:1712.05889](https://arxiv.org/abs/1712.05889) [cs.DC]**  https://doi.org/10.48550/arXiv.1712.05889
+
+3. [Modern Parallel and Distributed Python: A Quick Tutorial on Ray | by Robert Nishihara | Towards Data Science](https://towardsdatascience.com/modern-parallel-and-distributed-python-a-quick-tutorial-on-ray-99f8d70369b8)
+
+4. [What Is MySQL And Why It Is Used? (softwaretestinghelp.com)](https://www.softwaretestinghelp.com/what-is-mysql/)
+
+5. Lehninger Principles of Biochemistry.W.H.Freeman.
+
+6. https://en.wikipedia.org/wiki/Michaelis%E2%80%93Menten_kinetics
+
+7. https://en.wikipedia.org/wiki/Nginx
+
+   
+
 # Project Modeling
 
 ## Biological Models
@@ -233,10 +251,7 @@ In MySQL, Soundex algorithm is the following:
 
 5. [What is REST API (RESTful API)? (techtarget.com)](https://www.techtarget.com/searchapparchitecture/definition/RESTful-API)
 
-6. [What Is MySQL And Why It Is Used? (softwaretestinghelp.com)](https://www.softwaretestinghelp.com/what-is-mysql/)
-
 7. Lehninger Principles of Biochemistry.W.H.Freeman.
 
 8. https://en.wikipedia.org/wiki/Michaelis%E2%80%93Menten_kinetics
 
-9. 
