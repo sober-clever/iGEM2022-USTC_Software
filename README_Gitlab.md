@@ -29,7 +29,7 @@ Python packages required:
 
 Download the [dump of our database](https://github.com/sober-clever/iGEM2022-USTC_Software/blob/main/DumpDB.sql) from Github.
 
-```shellsession
+```shell
 $ mysql
 $ source /path/to/InitDB.sql
 $ mysql -u iGEM -p "IGEM_PAssword"
@@ -117,6 +117,10 @@ Using the tool palette you can:
   
   ![](https://static.igem.wiki/teams/4240/wiki/img/ug-1.png)
 
+  
+  
+  
+  
 - Customize group and input cache
   
   After drawing a group, you can click the "person" button, the group would be saved into the 1st buffer, and the former saved groups will move to the latter place, the fourth is automatically trashed.
