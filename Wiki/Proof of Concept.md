@@ -22,7 +22,15 @@ We choose this reaction:.
 
 <img src="C:\Users\Tanjf\Desktop\wet_lab3.png" alt="wet_lab3" style="zoom: 80%;" />
 
-​		We also invited NNU Team to validate our software. They searched for enzymes on our platform and compared the results with the ones the used in practice. It turned our that our platform successfully returned the enzymes they used, which inspired us a lot. 
+​		We also invited NNU Team to validate our software. They searched for enzymes on our platform and compared the results with the ones the used in practice. It turned out that our platform successfully returned the enzymes they used, which inspired us a lot. 
+
+​		<img src="C:\Users\Tanjf\Desktop\NNU.jpeg" style="zoom:80%;" />
+
+## Biological Corporation Validation
+
+​		We visited Anhui Lianchuang Biological Medicine Co., LTD and discussed with their researchers. They offered us their data information during their production process. The data were then input to our  platform and the results were given back to the corporation. The enzymes we selected were quite similar to the ones they used.
+
+
 
 ## Refrences
 
