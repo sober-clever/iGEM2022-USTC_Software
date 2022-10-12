@@ -7,13 +7,58 @@
 
 ## Design
 
-​		Our preliminary design was as follows. First we received request from clients. Then we conducted primary selection by screening the enzymes able to catalyze the reactions that contain the substracture marked in given reaction by clients. After that,  we passed the enzymes to the similarity-computing module. The module computed reaction similarity and sorted the primarily selected enzymes based on it. Finally, the backend API returned the top 30 enzymes according to the sort results. 
+### Preliminary design
+
+​		Our preliminary design was as follows:
+
+- Frontend
+  - Users input a reaction, mark the participation substructure and select the corresponding reaction type
+
+- Backend 
+
+  - Receive request from frontend
+  - Conduct primary selection by screening the enzymes able to catalyze the reactions that contain the substracture marked in given reactions
+  - Pass the enzymes to the similarity-computing module
+  - Compute reaction similarity and sort the primarily selected enzymes based on it
+  - Backend returns the top 30 enzymes according to the sort results
+
+  Here is a flowchart of our preliminary backend design.
 
 <img src="C:\Users\Tanjf\Desktop\Preliminary_Flowchart.svg" style="zoom:80%;" />
 
-​		We invited our instrcutor to test our software and he advised that we should take cofactors, organism and kinetics into consideration. He also reminded us of auxiliary reaction that recycled cofactors, which may help reduce the reaction cost. Thus, we added cofactor and organism options and refined our logic of primary selection. Besides, we added a furthur return of the auxiliary reaction. The furthur return at mean time gave the relevant kinetic constants so that the researchers know the suggessted amount ratio of enzyme and substrate for higher efficiency. 
+
+
+### Iterations
+
+​		We invited our instrcutor to test our software and he advised that we should take cofactors, organism and kinetics into consideration. He also reminded us of auxiliary reactions that recycled cofactors, which may help reduce the reaction cost. 
+
+​		Owing to these precious suggestions, we made  the following changes:
+
+- Option expanded for users
+
+  Cofactor and organism options were added to the frontend interface and taken into account during the enzyme primary selection in backend for more granular searches. Besides, we implented the elastic search of organism option with soundex.
+
+- More information
+
+  To be more relevant to the actual situation, basic return contained extra information about the optimum temprature and pH of the selected enzymes.
+
+-  Furthur return of the auxiliary reaction. 
+
+  Apart from the basic return, we added a furthur return, which gave the relevant kinetic constants to inform researchers could of the suggessted amount ratio of enzyme and substrate for higher efficiency. 
 
 <img src="C:\Users\Tanjf\Desktop\Flowchart.svg" style="zoom:80%;" />
+
+### Advantages
+
+Learning from other existing similar software like PathPred, Ketcher and so on, we notice the importance of user-friendliness. So we choose to design our web software from multiple perspectives. 
+
+From users' point of view, we have optimized the way to use the software. Compared to using the command line to access the software, our web software provides a GUI artboard. Based on Ketcher, we design a user-customized interface supporting users to use our software according to their own preferences. We allow users to draw chemical structures, import .mol file to generate chemical structures.
+
+And from a feedback perspective, our software return to users a complete set of informations about enzyme with intuitive and understandable informations. What's more, our software also return Brenda database links to our predicted enzymes which supports users to explore further informations.
+
+Besides, from the point of view of software implementation, our software supports fuzzy search for the sake of some wrong informations users input. Simultaneously, to increase the speed of enzyme searching, we adopt a heuristic search algorithm to balance the accuracy and speed of searching processes.
+
+It is worth mentioning that our software is free of environment dependence. Our software is running on the web browser and users don't need to download a sophisticated software in their local Windows, Linux or Macos computer. It is easy to accessible to our web software as long as you can access the Internet.
 
 ## Build
 
@@ -75,23 +120,33 @@ The back-end web framework we uesd is Django. Django makes it easier to build be
 
 
 
-### Advantages
-
-fast, user-friendly, accurate, ...
-
 ## Learn
 
-### Database Optimization
+### Improvement of Design
 
-### Performance Improvement
 
-​		Due to the big scale of the data primarily selected, it took our preliminary software a long time to compute similarity. Therefore, we first seperated the web module and the calculation module, deploying them on different servers. Then we modified the parameters passed to RxnSim and enabled Cache, which improved the speed by 30%. We also found the low efficiency of one-process programming, which could hardly utilize all the resources of servers. Hence, we used a ditributed-computing framework, ray, to furthur improve our speed. The time needed for the same inputs were then reduced by 50%. In pursuit of a better performance, we improved our server to a high-performance one, thus tremendously improving our speed. After all the optimization in those four aspects, the time needed to compare 5000 reactions was reduced from 90s to only 10s.
 
-### 用户友好型提升
+### Improvement of Build
 
-### Message Queue
+- **User-Friendliness**
+
+- **Database Optimization**
+
+  
+
+- **Performance Improvement**
+
+  ​		Due to the big scale of the data primarily selected, it took our preliminary software a long time to compute similarity. Therefore, we first seperated the web module and the calculation module, deploying them on different servers. Then we modified the parameters passed to RxnSim and enabled Cache, which improved the speed by 30%. We also found the low efficiency of one-process programming, which could hardly utilize all the resources of servers. Hence, we used a ditributed-computing framework, ray, to furthur improve our speed. The time needed for the same inputs were then reduced by 50%. In pursuit of a better performance, we improved our server to a high-performance one, thus tremendously improving our speed. After all the optimization in those four aspects, the time needed to compare 5000 reactions was reduced from 90s to only 10s.
+
+
+
+- **Message Queue**
 
 ​		Our preliminary software were quite weak and only supported one client online at the same time. To improve concurrency, we used uwsgi and modified the execution logic of ray so that we could support more clients visiting our sites simultaneously.
+
+
+
+
 
 
 
