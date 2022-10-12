@@ -73,6 +73,7 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                 if dic["type"] == "1":
                     ChoiceQueryset = Redox.objects.all()
                     FirstQueryset = FirstQueryset.union(ChoiceQueryset)
+                    print("111")
                 elif dic["type"] == "2":
                     ChoiceQueryset = Transfer.objects.all()
                     FirstQueryset = FirstQueryset.union(ChoiceQueryset)
@@ -91,10 +92,12 @@ def query_list(request):    # 用于根据给出的反应查询酶的信息
                     FirstQueryset = FirstQueryset.union(ChoiceQueryset)
                 else:
                     FirstQueryset = Reaction.objects.all()
+                    # print("777")
 
                 FirstList = []
                 for i in FirstQueryset:
                     FirstList.append(i.ec_num)
+                # print(FirstList)
                 SecondQueryset = Reaction.objects \
                     .filter(ec_num__in=FirstList) \
                     # .filter(substrate__contains=dic["reactant"]["reactionAtoms"][0]) \
