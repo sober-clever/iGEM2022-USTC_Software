@@ -50,9 +50,9 @@ Enter nginx directory:
 cd /etc/nginx
 ```
 
-The `nginx.conf` and `uwsgi.ini` is in the `nginx` directory.
+The `nginx.conf` and `uwsgi.ini` are in the `nginx` directory.
 
-Copy the `nginx.conf` and `uwsgi.ini` into the directory.(You need to change the path of the backend   project in `uwsgi,ini` to the actual path of the backend project on your server)
+Copy the `nginx.conf` and `uwsgi.ini` into the directory.(You need to change the path of the backend   project in `uwsgi.ini` to the actual path of the backend project on your server)
 
 Run the command:
 
